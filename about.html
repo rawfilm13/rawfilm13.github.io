@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <link rel="stylesheet" href="/css/details.css">
+    <style>
+        main {
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 40px 20px 80px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hero {
+            display: grid;
+            gap: 30px;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .hero strong {
+            color: #000;
+        }
+
+        .about-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-top: 40px;
+        }
+
+        .card {
+            border: 1px solid #e2e2e2;
+            border-radius: 20px;
+            padding: 28px;
+            background: #fff;
+            box-shadow: 0 18px 40px rgb(0 0 0 / 4%);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            letter-spacing: 0.03em;
+        }
+
+        .card p {
+            margin: 16px 0 0;
+            color: #555;
+            line-height: 1.75;
+        }
+
+        .stats {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(3, minmax(80px, 1fr));
+            margin-top: 40px;
+        }
+
+        .stat {
+            background: #f8f8f8;
+            border-radius: 18px;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+        }
+
+        .photo-highlight {
+            display: grid;
+            gap: 30px;
+            align-items: center;
+            grid-template-columns: 1.2fr 1fr;
+            margin-top: 56px;
+        }
+
+        .photo-highlight img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            min-height: 420px;
+            box-shadow: 0 30px 60px rgb(0 0 0 / 10%);
+        }
+
+        .photo-copy {
+            display: grid;
+            gap: 18px;
+        }
+
+        .photo-copy h2 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .photo-copy p {
+            margin: 0;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .instagram {
+            display: grid;
+            gap: 30px;
+            padding: 46px 32px;
+            margin-top: 56px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
+            border: 1px solid #ece8e4;
+        }
+
+        .instagram .insta-header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .instagram .insta-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+        }
+
+        .instagram .insta-header a {
+            color: #000;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .instagram p {
+            margin: 0;
+            color: #555;
+            line-height: 1.75;
+            max-width: 760px;
+        }
+
+        @media (max-width: 900px) {
+            .photo-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            header a {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/image/logo.png" alt="Logo" width="40px">
+            <div class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>About Raw Film</h1>
+            <p>We create timeless wedding stories with a thoughtful blend of candid emotion and elegant cinematography.
+                Every frame is designed to reflect your authentic moments, from intimate vows to joyful celebration.</p>
+        </section>
+
+        <div class="about-grid">
+            <article class="card">
+                <h2>Our Approach</h2>
+                <p>Raw Films captures your day in a natural, cinematic way. We focus on real connection, light, and
+                    movement so the final film feels personal, cinematic, and beautifully true to your story.</p>
+            </article>
+            <article class="card">
+                <h2>Why Choose Us</h2>
+                <p>Every couple receives a tailored experience, from pre-wedding planning to on-the-day direction. We
+                    combine a refined visual style with a relaxed presence so your celebration stays comfortable and
+                    unforgettable.</p>
+            </article>
+            <article class="card">
+                <h2>Our Promise</h2>
+                <p>We bring care, attention, and consistency to every project. Your highlights, portraits, and ceremony
+                    moments are edited with a cinematic rhythm that feels polished without losing the warmth of the day.
+                </p>
+            </article>
+        </div>
+
+        <section class="stats">
+            <div class="stat">
+                <strong>9+</strong>
+                <span>Years capturing love</span>
+            </div>
+            <div class="stat">
+                <strong>800+</strong>
+                <span>Weddings filmed</span>
+            </div>
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Personalized storytelling</span>
+            </div>
+        </section>
+
+        <section class="photo-highlight">
+            <img src="/image/about.jpeg" alt="Wedding photography highlight">
+            <div class="photo-copy">
+                <h2>Moments framed with heart</h2>
+                <p>Our imagery is created to feel timeless and intimate. We blend quiet portrait moments with the energy
+                    of the day, delivering photos that look elegant and full of emotion.</p>
+                <p>Whether it is a tender glance, a joyful celebration, or a cinematic detail, every photo is carefully
+                    composed to preserve the atmosphere of your wedding day.</p>
+            </div>
+        </section>
+        <section class="photo-highlight">
+            <img src="/image/me.jpeg" alt="Me">
+            <div class="photo-copy">
+                <h2>About Me</h2>
+                <p>RAW FILM by Lovepreet Singh Sadiora is dedicated to capturing emotions, love, and unforgettable
+                    moments through cinematic photography and videography. Certified by Sony India and a proud member of
+                    PPA Punjab, we believe every story deserves to be told beautifully.</p>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li>🏆 Sony India Certified Photographer</li>
+                    <li>📸 Professional Wedding Cinematographer</li>
+                    <li>🎖️ PPA Punjab Member</li>
+                    <li>🎬 Founder of RAW FILM</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="instagram">
+            <div class="insta-header">
+                <h2>Follow us on Instagram</h2>
+                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer">@rawfilm13</a>
+            </div>
+            <p>Explore more of our latest weddings, behind-the-scenes moments, and cinematic previews. Instagram is
+                where we share fresh inspiration and the stories behind the images.</p>
+        </section>
+    </main>
+</body>
+
+</html>

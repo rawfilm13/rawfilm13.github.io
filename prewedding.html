@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre Wedding</title>
+
+    <link rel="stylesheet" href="/css/details.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/image/logo.png" alt="Logo" width="40px">
+            <div class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>PRE WEDDING SHOOT</h1>
+
+        <div class="photos" id="gallery"></div>
+    </main>
+    
+    <script>
+        const images = ['1 (42)', '3 (10)', '5 (24)', '5 (51)', '5 (52)', '8 (32)', '8 (4)', '8 (45)', 'cover', 'DSC01700', 'DSC01773', 'DSC01870', 'DSC02396', 'DSC02440', 'DSC02536', 'thumbnail'];
+
+        const gallery = document.getElementById("gallery");
+
+        images.forEach(file => {
+            const img = document.createElement("img");
+            img.src = `/image/prewedding/${file}.webp`;
+            img.alt = file;
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+
+</html>

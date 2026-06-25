@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="/css/details.css">
+    <style>
+        main {
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 40px 20px 80px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hero {
+            display: grid;
+            gap: 30px;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            border: 1px solid #e2e2e2;
+            border-radius: 20px;
+            padding: 32px;
+            background: #fff;
+            box-shadow: 0 18px 40px rgb(0 0 0 / 4%);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .contact-card p {
+            margin: 16px 0 0;
+            color: #000;
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+        .contact-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 56px;
+        }
+
+        .social-card {
+            border: 1px solid #e2e2e2;
+            border-radius: 20px;
+            padding: 36px 28px;
+            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
+            border: 1px solid #ece8e4;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgb(0 0 0 / 8%);
+        }
+
+        .social-card h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            letter-spacing: 0.03em;
+        }
+
+        .social-card a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-card a:hover {
+            opacity: 0.6;
+        }
+
+        .cta-section {
+            display: grid;
+            gap: 24px;
+            padding: 46px 32px;
+            margin-top: 56px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
+            border: 1px solid #ece8e4;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .cta-section p {
+            margin: 16px 0 0;
+            color: #555;
+            line-height: 1.75;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 720px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            header a {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/image/logo.png" alt="Logo" width="40px">
+            <div class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Get In Touch</h1>
+            <p>Let's create something beautiful together. Reach out through any of the channels below, and we'll get back to you as soon as possible.</p>
+        </section>
+
+        <div class="contact-grid">
+            <article class="contact-card">
+                <h3>📧 Email</h3>
+                <p>
+                    <a href="mailto:rawfilm09@gmail.com">rawfilm45@gmail.com</a>
+                </p>
+            </article>
+            <a href="https://maps.app.goo.gl/eGc9uzsrCskKiymy9" target="_blank" style="text-decoration: none;">
+                <article class="contact-card" style="color: black;">
+                    <h3>📍 Location</h3>
+                    <p>Kotkapura, India</p>
+                    (click to open)
+                </article>
+            </a>
+            <article class="contact-card">
+                <h3>📱 Phone</h3>
+                <p>
+                    <a href="tel:+919877281570">+91 9877 281 570</a>
+                </p>
+            </article>
+        </div>
+
+        <section class="social-links">
+            <div class="social-card">
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer">@rawfilm13</a>
+            </div>
+            <div class="social-card">
+                <h3>YouTube</h3>
+                <a href="https://www.youtube.com/@rawfilm228" target="_blank" rel="noreferrer">Raw Film Channel</a>
+            </div>
+            <div class="social-card">
+                <h3>Facebook</h3>
+                <a href="https://www.facebook.com/share/1Bc4cGRsGS" target="_blank" rel="noreferrer">Raw Films</a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to book?</h2>
+            <p>Whether you're planning a wedding, engagement, or any special event, we'd love to hear about your story. Send us an email and let's start a conversation about bringing your vision to life.</p>
+        </section>
+    </main>
+</body>
+
+</html>

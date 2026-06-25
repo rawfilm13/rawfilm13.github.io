@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Ceremony</title>
+
+    <link rel="stylesheet" href="/css/details.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="/image/logo.png" alt="Logo" width="40px">
+            <div class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>RING CEREMONY SHOOT</h1>
+
+        <div class="photos" id="gallery"></div>
+    </main>
+    
+    <script>
+        const images = ['10', '2', '4', '8', '9', 'cover', 'DSC01757', 'thumbnail'];
+
+        const gallery = document.getElementById("gallery");
+
+        images.forEach(file => {
+            const img = document.createElement("img");
+            img.src = `/image/ringceremony/${file}.webp`;
+            img.alt = file;
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+
+</html>
