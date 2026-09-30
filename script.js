@@ -269,26 +269,23 @@ if (bookingForm && submitBtn && formStatus) {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/rawfilm45@gmail.com', {
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbzWK5IcwE6Rqc4PBkIaVM1EGzhZsrAMhs0_n-JwMZU9oB9wEcdGnX9skOCHqr4fLOM1/exec';
+            await fetch(scriptUrl, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'text/plain;charset=utf-8'
                 },
                 body: JSON.stringify(data)
             });
 
-            if (response.ok) {
-                formStatus.className = 'form-status success';
-                formStatus.innerHTML = '🎉 <strong>Thank you!</strong> Your booking request has been sent directly to our email. We will contact you shortly!';
-                formStatus.style.display = 'block';
-                bookingForm.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '🎉 <strong>Thank you!</strong> Your booking request has been sent successfully. We will contact you shortly!';
+            formStatus.style.display = 'block';
+            bookingForm.reset();
         } catch (error) {
             formStatus.className = 'form-status error';
-            formStatus.innerHTML = '⚠️ Oops! Could not send message automatically. Please contact us directly at <a href="mailto:rawfilm45@gmail.com" style="color: #fff; text-decoration: underline;">rawfilm45@gmail.com</a> or Call/WhatsApp: <a href="tel:+919877281570" style="color: #fff; text-decoration: underline;">+91 9877 281 570</a>.';
+            formStatus.innerHTML = '⚠️ Oops! Could not send message automatically. Please contact us directly at <a href="mailto:info@rawfilmphotography.com" style="color: #fff; text-decoration: underline;">info@rawfilmphotography.com</a> or Call/WhatsApp: <a href="tel:+919877281570" style="color: #fff; text-decoration: underline;">+91 9877 281 570</a>.';
             formStatus.style.display = 'block';
         } finally {
             submitBtn.disabled = false;

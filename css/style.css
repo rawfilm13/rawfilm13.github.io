@@ -525,13 +525,15 @@ header nav {
     }
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 768px) {
     .carousel .list .item .content {
         padding-right: 0;
     }
 
-    .carousel .list .item .content .title {
-        font-size: 30px;
+    .carousel .list .item .content .title,
+    .carousel .list .item .content .topic {
+        font-size: 26px;
+        line-height: 1.2;
     }
 }
 

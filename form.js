@@ -1,4 +1,4 @@
-// Reusable Booking Form Component (FormSubmit AJAX Direct Email to rawfilm45@gmail.com)
+// Reusable Booking Form Component (Direct booking submission to Google Sheet & Email notification)
 (function () {
     // Auto-inject Form Styles
     if (!document.getElementById('rf-form-styles')) {
@@ -251,7 +251,7 @@
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
 
-                // Primary Endpoint: Google Apps Script Web App (Saves to Google Sheet + Emails rawfilm45@gmail.com)
+                // Primary Endpoint: Google Apps Script Web App (Saves to Google Sheet + sends notification)
                 const googleScriptURL = 'https://script.google.com/macros/s/AKfycbzWK5IcwE6Rqc4PBkIaVM1EGzhZsrAMhs0_n-JwMZU9oB9wEcdGnX9skOCHqr4fLOM1/exec';
 
                 let isSuccess = false;
@@ -300,7 +300,7 @@
                             <a href="${waUrl}" target="_blank" class="cta-btn" style="background:#25d366; color:#fff; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
                                 💬 Send on WhatsApp Directly
                             </a>
-                            <a href="mailto:${targetEmail}?subject=New Booking - ${encodeURIComponent(data.name || 'Client')}&body=${waMsg}" class="cta-btn" style="background:#f1683a; color:#fff; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
+                            <a href="mailto:info@rawfilmphotography.com?subject=New Booking - ${encodeURIComponent(data.name || 'Client')}&body=${waMsg}" class="cta-btn" style="background:#f1683a; color:#fff; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
                                 ✉️ Send via Email App
                             </a>
                         `;

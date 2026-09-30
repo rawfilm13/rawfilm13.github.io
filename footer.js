@@ -61,7 +61,6 @@
             <div class="footer-col contact-col">
                 <h4>Get In Touch</h4>
                 <p><strong>Phone:</strong> <a href="tel:+919877281570" style="color: #ffffff; text-decoration: none;">+91 98772 81570</a></p>
-                <p><strong>Email:</strong> <a href="mailto:rawfilm45@gmail.com" style="color: #ffffff; text-decoration: none;">rawfilm45@gmail.com</a></p>
                 <p><strong>Email:</strong> <a href="mailto:info@rawfilmphotography.com" style="color: #ffffff; text-decoration: none;">info@rawfilmphotography.com</a></p>
                 <p>Available for destination shoots worldwide.</p>
             </div>
