@@ -14,6 +14,33 @@
         const style = document.createElement('style');
         style.id = 'rf-footer-styles';
         style.textContent = `
+            .footer-bottom {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-top: 25px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: wrap;
+                gap: 12px;
+                font-size: 12px;
+                color: #666;
+            }
+            .footer-col.links-col ul li a {
+                color: #ccc !important;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            .footer-col.links-col ul li a:hover {
+                color: #f1683a !important;
+            }
+            .footer-bottom .copyright-text {
+                color: #ccc !important;
+            }
+            .footer-bottom p {
+                margin: 0 !important;
+            }
             @media (max-width: 768px) {
                 .site-footer { text-align: center !important; }
                 .footer-container { grid-template-columns: 1fr !important; gap: 35px !important; text-align: center !important; }
@@ -24,7 +51,13 @@
                 .footer-col ul { text-align: center !important; padding: 0 !important; }
                 .footer-col ul li { text-align: center !important; }
                 .footer-col p { text-align: center !important; }
-                .footer-bottom { text-align: center !important; }
+                .footer-bottom { 
+                    flex-direction: column !important; 
+                    justify-content: center !important; 
+                    align-items: center !important; 
+                    text-align: center !important; 
+                    gap: 8px !important; 
+                }
             }
         `;
         document.head.appendChild(style);
@@ -62,12 +95,13 @@
                 <h4>Get In Touch</h4>
                 <p><strong>Phone:</strong> <a href="tel:+919877281570" style="color: #ffffff; text-decoration: none;">+91 98772 81570</a></p>
                 <p><strong>Email:</strong> <a href="mailto:info@rawfilmphotography.com" style="color: #ffffff; text-decoration: none;">info@rawfilmphotography.com</a></p>
-                <p>Available for destination shoots worldwide.</p>
+                <p><strong>Available for destination shoots worldwide.</strong></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Raw Film Photography. All rights reserved.</p>
+            <p class="copyright-text"><strong>Copyright &copy; 2026 Raw Film Photography. All rights reserved.</strong></p>
+            <p class="dev-credits" style="font-size: 12px; color: #777; letter-spacing: 0.3px;">Developed by <a href="https://admtech.in" target="_blank" rel="noopener noreferrer" style="color: #b0b0b0; font-weight: 600; text-decoration: none;">ADMTech Digital Solutions</a></p>
         </div>
     </footer>
 
