@@ -830,8 +830,14 @@ header nav {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 50px;
     padding: 10px 24px;
-    margin: 22px auto 0;
+    margin: 0 auto;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.testimonials-footer-capsule {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .google-rating-summary .google-icon-svg {
@@ -878,15 +884,20 @@ header nav {
 /* Swiper Slider styling */
 .testimonials-slider-container {
     position: relative;
-    padding: 10px 48px 50px;
+    padding: 10px 54px 10px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.testimonials-slider-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .myTestimonialSlider {
     width: 100%;
     overflow: hidden;
-    padding-bottom: 10px;
+    padding-bottom: 4px;
 }
 
 .myTestimonialSlider .swiper-slide {
@@ -978,45 +989,83 @@ header nav {
     flex-grow: 1;
 }
 
-/* Swiper navigation buttons */
-.testimonials-slider-container .swiper-button-prev,
-.testimonials-slider-container .swiper-button-next {
-    width: 42px;
-    height: 42px;
-    background: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
-    color: #fff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-    transition: all 0.25s ease;
+.btn-read-more {
+    background: transparent;
+    border: none;
+    color: #f1683a;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 6px;
+    text-decoration: underline;
+    display: inline-block;
+    transition: color 0.2s ease;
 }
 
-.testimonials-slider-container .swiper-button-prev:after,
-.testimonials-slider-container .swiper-button-next:after {
+.btn-read-more:hover {
+    color: #ff855e;
+}
+
+/* Swiper navigation buttons */
+.testimonials-slider-wrapper .swiper-button-prev,
+.testimonials-slider-wrapper .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    background: rgba(22, 22, 22, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+    transition: all 0.25s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    z-index: 25;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonials-slider-wrapper .swiper-button-prev:after,
+.testimonials-slider-wrapper .swiper-button-next:after {
     font-size: 16px;
     font-weight: 700;
+    color: #ffffff;
 }
 
-.testimonials-slider-container .swiper-button-prev:hover,
-.testimonials-slider-container .swiper-button-next:hover {
+.testimonials-slider-wrapper .swiper-button-prev:hover,
+.testimonials-slider-wrapper .swiper-button-next:hover {
     background: #f1683a;
     border-color: #f1683a;
-    color: #fff;
-    transform: scale(1.08);
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.08);
 }
 
-.testimonials-slider-container .swiper-button-prev {
-    left: 0;
+.testimonials-slider-wrapper .swiper-button-prev {
+    left: -48px;
 }
 
-.testimonials-slider-container .swiper-button-next {
-    right: 0;
+.testimonials-slider-wrapper .swiper-button-next {
+    right: -48px;
+}
+
+.testimonials-slider-container .swiper-pagination {
+    position: static !important;
+    margin: 28px auto 22px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
 }
 
 .testimonials-slider-container .swiper-pagination-bullet {
     background: #666;
     opacity: 0.6;
     transition: all 0.25s ease;
+    margin: 0 !important;
 }
 
 .testimonials-slider-container .swiper-pagination-bullet-active {
@@ -1028,11 +1077,11 @@ header nav {
 
 @media (max-width: 768px) {
     .testimonials-slider-container {
-        padding: 10px 10px 50px;
+        padding: 10px 0 10px;
     }
 
-    .testimonials-slider-container .swiper-button-prev,
-    .testimonials-slider-container .swiper-button-next {
+    .testimonials-slider-wrapper .swiper-button-prev,
+    .testimonials-slider-wrapper .swiper-button-next {
         display: none;
     }
 
