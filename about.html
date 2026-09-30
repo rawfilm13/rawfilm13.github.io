@@ -7,6 +7,7 @@
     <title>About</title>
 
     <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <style>
         main {
             margin: 0 auto;
@@ -178,25 +179,14 @@
             .hero h1 {
                 font-size: 2.4rem;
             }
-
-            header a {
-                margin-right: 10px;
-            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img src="/image/logo.png" alt="Logo" width="40px">
-            <div class="navlinks">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <!-- Global Header Component (Single Line) -->
+    <div id="site-header"></div>
+    <script src="/header.js"></script>
 
     <main>
         <section class="hero">
@@ -275,6 +265,10 @@
                 where we share fresh inspiration and the stories behind the images.</p>
         </section>
     </main>
+
+    <!-- Global Footer Component (Single Line) -->
+    <div id="site-footer"></div>
+    <script src="/footer.js"></script>
 </body>
 
 </html>

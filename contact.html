@@ -7,6 +7,7 @@
     <title>Contact</title>
 
     <link rel="stylesheet" href="/css/details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <style>
         main {
             margin: 0 auto;
@@ -127,54 +128,43 @@
         }
 
         .cta-section {
-            display: grid;
-            gap: 24px;
-            padding: 46px 32px;
+            display: block;
+            padding: 50px 36px;
             margin-top: 56px;
             border-radius: 28px;
-            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
-            border: 1px solid #ece8e4;
+            background: linear-gradient(145deg, #161616, #0e0e0e);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
 
         .cta-section h2 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.2rem;
             letter-spacing: 0.03em;
+            color: #ffffff;
         }
 
         .cta-section p {
-            margin: 16px 0 0;
-            color: #555;
+            margin: 16px auto 0;
+            color: #aaa;
             line-height: 1.75;
             max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         @media (max-width: 720px) {
             .hero h1 {
                 font-size: 2.4rem;
             }
-
-            header a {
-                margin-right: 10px;
-            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img src="/image/logo.png" alt="Logo" width="40px">
-            <div class="navlinks">
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <!-- Global Header Component (Single Line) -->
+    <div id="site-header"></div>
+    <script src="/header.js"></script>
 
     <main>
         <section class="hero">
@@ -186,7 +176,7 @@
             <article class="contact-card">
                 <h3>📧 Email</h3>
                 <p>
-                    <a href="mailto:rawfilm09@gmail.com">rawfilm45@gmail.com</a>
+                    <a href="mailto:rawfilm45@gmail.com">rawfilm45@gmail.com</a>
                 </p>
             </article>
             <a href="https://maps.app.goo.gl/eGc9uzsrCskKiymy9" target="_blank" style="text-decoration: none;">
@@ -222,8 +212,14 @@
         <section class="cta-section">
             <h2>Ready to book?</h2>
             <p>Whether you're planning a wedding, engagement, or any special event, we'd love to hear about your story. Send us an email and let's start a conversation about bringing your vision to life.</p>
+            <div id="booking-form-container"></div>
+            <script src="/form.js"></script>
         </section>
     </main>
+
+    <!-- Global Footer Component (Single Line) -->
+    <div id="site-footer"></div>
+    <script src="/footer.js"></script>
 </body>
 
 </html>

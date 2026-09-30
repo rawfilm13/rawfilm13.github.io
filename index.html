@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <nav>
-            <img src="/image/logo.png" alt="Logo" width="40px">
-            <div class="navlinks">
+            <a href="/" class="logo-link">
+                <img src="/image/logo.png" alt="Raw Film Logo" class="logo">
+            </a>
+            <div class="navlinks" id="navLinks">
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
             </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
@@ -165,6 +173,73 @@
         <!-- time running -->
         <div class="time"></div>
     </div>
+
+
+    <!-- Overview Section -->
+    <section class="overview-section" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">CRAFTING TIMELESS STORIES</span>
+                <h2>Capturing Authentic Moments</h2>
+                <p>Every frame is thoughtfully crafted to reflect raw emotions, timeless romance, and unscripted joy.
+                    Discover our signature shoots.</p>
+            </div>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="image/prewedding/cover.webp" alt="Pre Wedding Shoot" loading="lazy">
+                    <div class="card-info">
+                        <h3>Pre Wedding</h3>
+                        <p>Romantic stories set in stunning, cinematic landscapes.</p>
+                        <a href="/prewedding.html" class="card-link">Explore Gallery &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="image/ringceremony/cover.webp" alt="Ring Ceremony Shoot" loading="lazy">
+                    <div class="card-info">
+                        <h3>Ring Ceremony</h3>
+                        <p>Intimate celebrations and genuine, heartfelt vows.</p>
+                        <a href="/ringceremony.html" class="card-link">Explore Gallery &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="image/wedding/cover.webp" alt="Wedding Shoot" loading="lazy">
+                    <div class="card-info">
+                        <h3>Wedding Day</h3>
+                        <p>Grand rituals, tender smiles, and unforgettable beauty.</p>
+                        <a href="/wedding.html" class="card-link">Explore Gallery &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="image/maternity/DSC03692.webp" alt="Maternity Shoot" loading="lazy">
+                    <div class="card-info">
+                        <h3>Maternity</h3>
+                        <p>Graceful portraits honoring new beginnings and love.</p>
+                        <a href="/maternity.html" class="card-link">Explore Gallery &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-cta" id="booking">
+                <div class="cta-header">
+                    <span class="sub-title">BOOK YOUR SHOOT</span>
+                    <h3>Ready to create something unforgettable?</h3>
+                    <p>Share your details below and we will get back to you with personalized pricing and availability.
+                    </p>
+                </div>
+
+                <div id="booking-form-container"></div>
+                <script src="/form.js"></script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer & Floating Action Buttons Component (Single Line) -->
+    <div id="site-footer"></div>
+    <script src="/footer.js"></script>
 
     <script src="script.js"></script>
 </body>
