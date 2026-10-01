@@ -4,37 +4,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maternity</title>
+    <title>Maternity Shoots | RAW FILM Photography</title>
+    <meta name="description" content="Cherished and graceful maternity photography by RAW FILM across Punjab. Capturing the divine glow of motherhood and the tender anticipation of new life.">
+    <link rel="canonical" href="https://rawfilmphotography.com/maternity.html">
 
-    <link rel="stylesheet" href="/css/details.css">
+    <!-- Stylesheets with Cache Buster -->
+    <link rel="stylesheet" href="/css/details.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    <!-- Swiper 11 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        /* Instant Guaranteed Dark Theme */
+        body {
+            background-color: #0a0a0a !important;
+            color: #f0f0f0 !important;
+            margin: 0;
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 
-<body>
+<body class="prewedding-page gallery-page">
     <!-- Global Header Component (Single Line) -->
     <div id="site-header"></div>
     <script src="/header.js"></script>
 
-    <main>
-        <h1>MATERNITY SHOOT</h1>
+    <!-- Page Header (Identical to Pre-Wedding Theme) -->
+    <header class="prewedding-hero gallery-hero">
+        <span class="prewedding-badge gallery-badge">The Miracle Of New Life</span>
+        <h1>Maternity Shoots</h1>
+        <p>The radiant grace of motherhood and the gentle anticipation of welcoming a new heartbeat into the world. Celebrating the miracle of life with timeless, poetic, and heartwarming captures.</p>
+    </header>
 
-        <div class="photos" id="gallery"></div>
+    <main>
+        <!-- Featured Slider Section (Exact Pre-Wedding Structure) -->
+        <section class="couple-section">
+            <div class="couple-header">
+                <span class="couple-tag">Curated Highlights</span>
+                <h2 class="couple-title">Cherished Moments</h2>
+                <p class="couple-desc">Soft golden light, intimate embraces, and the purest celebration of growing family love.</p>
+            </div>
+
+            <!-- Slider Wrapper with Outside Arrows & Dots -->
+            <div class="couple-slider-wrapper">
+                <div class="couple-slider-track">
+                    <button class="slider-arrow-btn prev-btn-maternity" aria-label="Previous photo">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <div class="swiper couple-swiper swiper-maternity">
+                        <div class="swiper-wrapper" id="maternity-slider-wrapper"></div>
+                    </div>
+                    <button class="slider-arrow-btn next-btn-maternity" aria-label="Next photo">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                </div>
+                <div class="swiper-pagination couple-pagination pagination-maternity"></div>
+            </div>
+        </section>
+
+        <!-- Full Gallery Grid Section -->
+        <section class="gallery-grid-section">
+            <div class="gallery-grid-header">
+                <h3>Full Maternity Gallery</h3>
+                <p>Click any photo to view in high definition</p>
+            </div>
+            <div class="gallery-grid" id="maternity-grid"></div>
+        </section>
     </main>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="rf-lightbox" id="rfLightbox" role="dialog" aria-hidden="true" onclick="closeLightbox(event)">
+        <button class="rf-lightbox-close" onclick="closeLightbox(event)" aria-label="Close image">&times;</button>
+        <div class="rf-lightbox-content" onclick="event.stopPropagation()">
+            <img class="rf-lightbox-img" id="rfLightboxImg" src="" alt="Maternity photo full view">
+            <div class="rf-lightbox-caption" id="rfLightboxCaption"></div>
+        </div>
+    </div>
 
     <!-- Global Footer Component (Single Line) -->
     <div id="site-footer"></div>
     <script src="/footer.js"></script>
-    
+
+    <!-- Swiper 11 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        const images = ['DSC03217', 'DSC03312', 'DSC03391', 'DSC03446', 'DSC03547', 'DSC03602', 'DSC03644', 'DSC03691', 'DSC03692'];
+        const maternityImages = [
+            "01", "02", "03", "04", "DSC03217", "DSC03272", "DSC03312", 
+            "DSC03391", "DSC03446", "DSC03535", "DSC03547", "DSC03558", 
+            "DSC03602", "DSC03644", "DSC03676", "DSC03677", "DSC03691", "DSC03692"
+        ];
 
-        const gallery = document.getElementById("gallery");
+        const sliderWrapper = document.getElementById("maternity-slider-wrapper");
+        const grid = document.getElementById("maternity-grid");
 
-        images.forEach(file => {
-            const img = document.createElement("img");
-            img.src = `/image/maternity/${file}.webp`;
-            img.alt = file;
-            gallery.appendChild(img);
+        maternityImages.forEach((imgFile) => {
+            const encodedFile = encodeURIComponent(imgFile);
+            const imgSrc = `/image/maternity/${encodedFile}.webp`;
+            const caption = "Maternity Shoot &bull; RAW FILM";
+
+            // 1. Slider Slide
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide couple-slide";
+            slide.innerHTML = `
+                <div class="couple-card" onclick="openLightbox('${imgSrc}', '${caption}')">
+                    <img class="card-img" src="${imgSrc}" alt="Maternity shoot - RAW FILM" loading="lazy">
+                    <div class="couple-card-overlay">
+                        <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                    </div>
+                </div>
+            `;
+            sliderWrapper.appendChild(slide);
+
+            // 2. Grid Card
+            const card = document.createElement("div");
+            card.className = "couple-card";
+            card.onclick = () => openLightbox(imgSrc, caption);
+            card.innerHTML = `
+                <img class="card-img" src="${imgSrc}" alt="Maternity shoot - RAW FILM" loading="lazy">
+                <div class="couple-card-overlay">
+                    <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Initialize Swiper with Direct Element References
+        const prevBtn = document.querySelector('.prev-btn-maternity');
+        const nextBtn = document.querySelector('.next-btn-maternity');
+        const paginationEl = document.querySelector('.pagination-maternity');
+        const swiperContainer = document.querySelector('.swiper-maternity');
+
+        new Swiper(swiperContainer, {
+            slidesPerView: 1, // Mobile: 1 slide
+            spaceBetween: 14,
+            loop: true,
+            speed: 600,
+            grabCursor: true,
+            navigation: {
+                prevEl: prevBtn,
+                nextEl: nextBtn,
+            },
+            pagination: {
+                el: paginationEl,
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 18,
+                },
+                1024: {
+                    slidesPerView: 4, // PC: 4 slides
+                    spaceBetween: 22,
+                }
+            }
+        });
+
+        // Lightbox Functions
+        const lightbox = document.getElementById("rfLightbox");
+        const lightboxImg = document.getElementById("rfLightboxImg");
+        const lightboxCaption = document.getElementById("rfLightboxCaption");
+
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.innerHTML = `<strong>${caption}</strong>`;
+            lightbox.classList.add("active");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox(e) {
+            if (e) e.stopPropagation();
+            lightbox.classList.remove("active");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImg.src = "";
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && lightbox.classList.contains("active")) {
+                closeLightbox();
+            }
         });
     </script>
 </body>

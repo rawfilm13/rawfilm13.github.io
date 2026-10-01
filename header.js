@@ -201,6 +201,41 @@
                     color: #ffcc00 !important;
                     transform: none;
                 }
+
+                .site-header-dark .nav-dropdown {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .site-header-dark .nav-dropdown-menu {
+                    position: static;
+                    transform: none;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 8px;
+                    width: 100%;
+                    margin: 6px 0 10px;
+                    box-shadow: none;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 4px 0;
+                    box-sizing: border-box;
+                }
+
+                .site-header-dark .nav-dropdown-menu a {
+                    padding: 10px 14px !important;
+                    font-size: 13px !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                    color: #bbb !important;
+                }
+
+                .site-header-dark .nav-dropdown-menu a:last-child {
+                    border-bottom: none !important;
+                }
             }
         `;
         document.head.appendChild(style);
@@ -214,6 +249,18 @@
             </a>
             <div class="navlinks" id="hdrNavLinks">
                 <a href="/">Home</a>
+                <div class="nav-dropdown" id="hdrNavDropdown">
+                    <a href="/recent-work.html" class="nav-dropdown-trigger" id="hdrDropdownTrigger">
+                        Our Recent Work <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/prewedding.html">Pre Wedding Shoots</a>
+                        <a href="/ringceremony.html">Ring Ceremony</a>
+                        <a href="/wedding.html">Wedding Shoots</a>
+                        <a href="/maternity.html">Maternity Shoot</a>
+                        <a href="/portfolio.html">Professional Photoshoot</a>
+                    </div>
+                </div>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
             </div>
@@ -244,16 +291,26 @@
         // Active link detection
         const navLinksContainer = document.getElementById('hdrNavLinks');
         const hamburgerBtn = document.getElementById('hdrHamburgerBtn');
+        const dropdownTrigger = document.getElementById('hdrDropdownTrigger');
 
         if (navLinksContainer) {
             const links = navLinksContainer.querySelectorAll('a');
             const path = window.location.pathname.toLowerCase();
+            let isDropdownActive = false;
+
             links.forEach(link => {
                 const href = link.getAttribute('href').toLowerCase();
                 if (href === path || (href !== '/' && path.endsWith(href))) {
                     link.classList.add('active');
+                    if (link.closest('.nav-dropdown-menu')) {
+                        isDropdownActive = true;
+                    }
                 }
             });
+
+            if (isDropdownActive && dropdownTrigger) {
+                dropdownTrigger.classList.add('active');
+            }
         }
 
         // Hamburger Menu Events

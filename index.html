@@ -22,7 +22,7 @@
     <meta property="og:title" content="RAW FILM | Best Wedding Photographer & Cinematographer in Punjab">
     <meta property="og:description"
         content="RAW FILM by Lovepreet Singh Sadiora - Sony India Certified studio capturing authentic emotions, timeless romance, and cinematic stories across Punjab & worldwide.">
-    <meta property="og:image" content="https://rawfilmphotography.com/image/prewedding/cover.webp">
+    <meta property="og:image" content="https://rawfilmphotography.com/image/prewedding/Love%20&%20Kiran/cover.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="RAW FILM Wedding Photography & Cinematography">
@@ -35,7 +35,7 @@
     <meta name="twitter:title" content="RAW FILM | Best Wedding Photographer & Cinematographer in Punjab">
     <meta name="twitter:description"
         content="Capturing authentic emotions, timeless romance, and cinematic love stories. Sony India Certified & PPA Punjab Member.">
-    <meta name="twitter:image" content="https://rawfilmphotography.com/image/prewedding/cover.webp">
+    <meta name="twitter:image" content="https://rawfilmphotography.com/image/prewedding/Love%20&%20Kiran/cover.webp">
     <meta name="google-site-verification" content="Gif2Gkkx3ErJPstlV23HsqT0CNdEO1KCqzdiVkC1eFE" />
 
     <!-- Schema.org JSON-LD Structured Data -->
@@ -50,7 +50,7 @@
           "alternateName": "RAW FILM by Lovepreet Singh Sadiora",
           "url": "https://rawfilmphotography.com/",
           "logo": "https://rawfilmphotography.com/image/logo.png",
-          "image": "https://rawfilmphotography.com/image/prewedding/cover.webp",
+          "image": "https://rawfilmphotography.com/image/prewedding/Love%20&%20Kiran/cover.webp",
           "description": "RAW FILM by Lovepreet Singh Sadiora is a premier wedding photography and cinematography studio based in Kotkapura, Punjab. Certified by Sony India and proud member of PPA Punjab.",
           "telephone": "+919877281570",
           "email": "info@rawfilmphotography.com",
@@ -170,11 +170,32 @@
         <!-- list item -->
         <div class="list">
             <div class="item">
-                <img src="image/prewedding/DSC025367.webp">
+                <img src="image/prewedding/Gurtaj%20&%20Harmeen/DSC09002.webp">
                 <div class="content">
                     <div class="author">RAWFILM</div>
-                    <div class="topic">PRE WEDDING</div>
-                    <div class="title">SHOOT</div>
+                    <div class="topic">TRADITIONAL STYLE</div>
+                    <div class="title">PRE WEDDING SHOOT</div>
+                    <div class="des">
+                        Capture the excitement and romance before your big day with a pre-wedding photoshoot that
+                        reflects your unique love story. We create natural, timeless images filled with genuine
+                        emotions, beautiful moments, and memories you'll cherish forever.
+                    </div>
+                    <div class="buttons">
+                        <a href="/prewedding.html">
+                            <button>SEE MORE</button>
+                        </a>
+                        <a href="/contact.html">
+                            <button>CONTACT</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/prewedding/Manpreet%20&%20Aman/DSC025367.webp">
+                <div class="content">
+                    <div class="author">RAWFILM</div>
+                    <div class="topic">WESTREN STYLE</div>
+                    <div class="title">PRE WEDDING SHOOT</div>
                     <div class="des">
                         Capture the excitement and romance before your big day with a pre-wedding photoshoot that
                         reflects your unique love story. We create natural, timeless images filled with genuine
@@ -254,7 +275,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="image/portfolio/portfolio_12.webp">
+                <img src="image/portfolio/IMG_6119.webp">
                 <div class="content">
                     <div class="author">RAWFILM</div>
                     <div class="topic">PROFESSIONAL</div>
@@ -278,13 +299,24 @@
         <!-- list thumnail -->
         <div class="thumbnail">
             <div class="item">
-                <img src="image/prewedding/thumbnail.webp">
+                <img src="image/prewedding/Love%20&%20Kiran/thumbnail.webp">
                 <div class="content">
                     <div class="title">
-                        PRE WEDDING
+                        TRADITIONAL
                     </div>
                     <div class="description">
-                        Photoshoot
+                        Pre Wedding
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/prewedding/Manpreet%20&%20Aman/DSC025367.webp">
+                <div class="content">
+                    <div class="title">
+                        WESTERN
+                    </div>
+                    <div class="description">
+                        Pre Wedding
                     </div>
                 </div>
             </div>
@@ -355,13 +387,19 @@
 
             <div class="teaser-video-wrapper">
                 <div class="teaser-video-container" id="teaserPlayerBox">
-                    <iframe 
-                        src="https://www.youtube.com/embed/cq-bTCEY4KY?rel=0&controls=1&playsinline=1" 
-                        title="RAW FILM Cinematic Teaser" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen 
-                        loading="lazy">
-                    </iframe>
+                    <div class="teaser-poster" id="teaserPoster"
+                        style="background-image: url('https://img.youtube.com/vi/cq-bTCEY4KY/maxresdefault.jpg');"
+                        title="Click to play teaser" onclick="playTeaserVideo(event)">
+                        <div class="teaser-poster-overlay"></div>
+                        <button class="teaser-play-btn" id="teaserPlayBtn" type="button" aria-label="Play Teaser Video"
+                            onclick="playTeaserVideo(event)">
+                            <span class="play-icon-triangle"></span>
+                        </button>
+                        <div class="teaser-badge">
+                            <i class="fa fa-film"></i> <span>Watch Teaser</span>
+                        </div>
+                    </div>
+                    <div class="teaser-iframe-holder" id="teaserIframeHolder"></div>
                 </div>
             </div>
         </div>
@@ -380,7 +418,7 @@
             <div class="category-grid">
                 <div class="category-card">
                     <a href="/prewedding.html" class="card-img-link" aria-label="Pre Wedding Shoot">
-                        <img src="image/prewedding/cover.webp" alt="Pre Wedding Shoot" loading="lazy">
+                        <img src="image/prewedding/Love%20&%20Kiran/cover.webp" alt="Pre Wedding Shoot" loading="lazy">
                     </a>
                     <div class="card-info">
                         <h3><a href="/prewedding.html">Pre Wedding</a></h3>
@@ -599,7 +637,8 @@
                                                 videography and an unforgettable experience. They are really really sooo
                                                 good and helpful! 😊</span>&rdquo;<button type="button"
                                                 class="btn-read-more" onclick="toggleReadMore(this, 'harmanMore')">Read
-                                                more</button></p>
+                                                more</button>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -1027,6 +1066,21 @@
                 });
             }
         });
+
+        // Global Play Teaser Function (bypasses any DOMContentLoaded or external script wait)
+        function playTeaserVideo(e) {
+            if (e) {
+                e.stopPropagation();
+            }
+            var poster = document.getElementById('teaserPoster');
+            var holder = document.getElementById('teaserIframeHolder');
+            if (!holder) return;
+            if (poster) {
+                poster.classList.add('is-hidden');
+                poster.style.display = 'none';
+            }
+            holder.innerHTML = '<iframe src="https://www.youtube.com/embed/cq-bTCEY4KY?autoplay=1&rel=0&controls=1&playsinline=1" title="RAW FILM Cinematic Teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>';
+        }
     </script>
 
     <script src="script.js"></script>
