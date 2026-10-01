@@ -4,48 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact Us | RAW FILM Photography</title>
+    <meta name="description" content="Get in touch with RAW FILM by Lovepreet Singh Sadiora. Book luxury wedding photography, pre-wedding shoots, and cinematography in Punjab & worldwide.">
+    <link rel="canonical" href="https://rawfilmphotography.com/contact.html">
 
-    <link rel="stylesheet" href="/css/details.css">
+    <!-- Stylesheets with Cache Buster -->
+    <link rel="stylesheet" href="/css/details.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
     <style>
-        main {
-            margin: 0 auto;
-            max-width: 1000px;
-            padding: 40px 20px 80px;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .hero {
-            display: grid;
-            gap: 30px;
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .hero h1 {
+        /* Instant Guaranteed Dark Theme */
+        body {
+            background-color: #0a0a0a !important;
+            color: #f0f0f0 !important;
             margin: 0;
-            font-size: 3rem;
-            letter-spacing: 0.05em;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .hero p {
-            max-width: 720px;
+        .contact-main {
             margin: 0 auto;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #333;
+            max-width: 1050px;
+            padding: 10px 20px 80px;
+            box-sizing: border-box;
         }
 
         .contact-grid {
             display: grid;
             gap: 24px;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .contact-card-link {
@@ -56,13 +44,13 @@
         }
 
         .contact-card {
-            border: 1px solid #e2e2e2;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            padding: 32px 18px;
-            background: #fff;
-            box-shadow: 0 18px 40px rgb(0 0 0 / 4%);
+            padding: 36px 20px;
+            background: #141414;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -72,22 +60,44 @@
         }
 
         .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px rgb(0 0 0 / 8%);
+            transform: translateY(-6px);
+            border-color: rgba(255, 204, 0, 0.5);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 204, 0, 0.25);
+        }
+
+        .contact-card .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 204, 0, 0.35);
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 14px;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        .contact-card:hover .card-icon {
+            transform: scale(1.1);
+            background: #ffcc00;
+            color: #000000;
         }
 
         .contact-card h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            letter-spacing: 0.03em;
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: #666;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         .contact-card p {
-            margin: 8px 0 0;
-            color: #000;
+            margin: 6px 0 0;
+            color: #ffcc00;
             font-size: 1.1rem;
             line-height: 1.5;
             font-weight: 600;
@@ -101,119 +111,146 @@
 
         .contact-card .sub-hint {
             display: block;
-            margin-top: 6px;
-            font-size: 0.82rem;
+            margin-top: 8px;
+            font-size: 0.8rem;
             color: #777;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
+        /* Social Cards */
         .social-links {
             display: grid;
             gap: 24px;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            margin-top: 56px;
+            margin-top: 55px;
         }
 
         .social-card {
-            border: 1px solid #e2e2e2;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            padding: 36px 28px;
-            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
-            border: 1px solid #ece8e4;
+            padding: 34px 24px;
+            background: #141414;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .social-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px rgb(0 0 0 / 8%);
+            transform: translateY(-5px);
+            border-color: rgba(255, 204, 0, 0.5);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 18px rgba(255, 204, 0, 0.2);
         }
 
         .social-card h3 {
-            margin-top: 0;
+            margin: 0;
             font-size: 1.3rem;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.5px;
+            color: #ffffff;
         }
 
         .social-card a {
-            color: #000;
+            color: #ffcc00;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
             margin-top: 12px;
             font-size: 0.95rem;
-            transition: opacity 0.3s ease;
+            transition: color 0.25s ease, transform 0.25s ease;
         }
 
         .social-card a:hover {
-            opacity: 0.6;
+            color: #ffffff;
+            transform: scale(1.05);
         }
 
+        /* Booking CTA Section */
         .cta-section {
             display: block;
-            padding: 50px 36px;
-            margin-top: 56px;
+            padding: 55px 36px;
+            margin-top: 65px;
             border-radius: 28px;
-            background: linear-gradient(145deg, #161616, #0e0e0e);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, #151515, #0e0e0e);
+            border: 1.5px solid rgba(255, 204, 0, 0.25);
             color: #ffffff;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8);
             text-align: center;
+            box-sizing: border-box;
+        }
+
+        .cta-section .sub-title {
+            color: #ffcc00;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
         }
 
         .cta-section h2 {
             margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 0.03em;
+            font-size: 2.3rem;
+            letter-spacing: 0.5px;
             color: #ffffff;
         }
 
         .cta-section p {
-            margin: 16px auto 0;
-            color: #aaa;
+            margin: 14px auto 0;
+            color: #a0a0a0;
             line-height: 1.75;
             max-width: 680px;
+            font-size: 14px;
         }
 
         @media (max-width: 720px) {
-            .hero h1 {
-                font-size: 2.4rem;
+            .cta-section {
+                padding: 40px 18px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="prewedding-page gallery-page">
     <!-- Global Header Component (Single Line) -->
     <div id="site-header"></div>
     <script src="/header.js"></script>
 
-    <main>
-        <section class="hero">
-            <h1>Get In Touch</h1>
-            <p>Let's create something beautiful together. Reach out through any of the channels below, and we'll get back to you as soon as possible.</p>
-        </section>
+    <!-- Page Header (Pre-Wedding Theme) -->
+    <header class="prewedding-hero gallery-hero">
+        <span class="prewedding-badge gallery-badge">Connect With Us</span>
+        <h1>Get In Touch</h1>
+        <p>Let's create something timeless and beautiful together. Reach out through any of the channels below, or share your event details to check personalized availability and pricing.</p>
+    </header>
 
+    <main class="contact-main">
         <div class="contact-grid">
             <a href="mailto:info@rawfilmphotography.com" class="contact-card-link">
                 <article class="contact-card">
-                    <h3>📧 Email</h3>
+                    <div class="card-icon"><i class="fa fa-envelope"></i></div>
+                    <h3>Email</h3>
                     <p class="contact-value email-value">info@rawfilmphotography.com</p>
-                    <span class="sub-hint">(click to send email)</span>
+                    <span class="sub-hint">(Click to send email)</span>
                 </article>
             </a>
             <a href="https://maps.app.goo.gl/eGc9uzsrCskKiymy9" target="_blank" rel="noopener noreferrer" class="contact-card-link">
                 <article class="contact-card">
-                    <h3>📍 Location</h3>
-                    <p class="contact-value">Kotkapura, India</p>
-                    <span class="sub-hint">(click to open)</span>
+                    <div class="card-icon"><i class="fa fa-map-marker"></i></div>
+                    <h3>Location</h3>
+                    <p class="contact-value">Kotkapura, Punjab</p>
+                    <span class="sub-hint">(Click to view on Google Maps)</span>
                 </article>
             </a>
             <a href="tel:+919877281570" class="contact-card-link">
                 <article class="contact-card">
-                    <h3>📱 Phone</h3>
-                    <p class="contact-value">+91 9877 281 570</p>
-                    <span class="sub-hint">(click to call)</span>
+                    <div class="card-icon"><i class="fa fa-phone"></i></div>
+                    <h3>Phone</h3>
+                    <p class="contact-value">+91 98772 81570</p>
+                    <span class="sub-hint">(Click to call directly)</span>
                 </article>
             </a>
         </div>
@@ -221,21 +258,22 @@
         <section class="social-links">
             <div class="social-card">
                 <h3>Instagram</h3>
-                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer">@rawfilm13</a>
+                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer">@rawfilm13 &rarr;</a>
             </div>
             <div class="social-card">
                 <h3>YouTube</h3>
-                <a href="https://www.youtube.com/@rawfilm13" target="_blank" rel="noreferrer">Raw Film Channel</a>
+                <a href="https://www.youtube.com/@rawfilm13" target="_blank" rel="noreferrer">Raw Film Channel &rarr;</a>
             </div>
             <div class="social-card">
                 <h3>Facebook</h3>
-                <a href="https://www.facebook.com/share/1Bc4cGRsGS" target="_blank" rel="noreferrer">Raw Film</a>
+                <a href="https://www.facebook.com/lucky.singh.261176" target="_blank" rel="noreferrer">Raw Film Facebook &rarr;</a>
             </div>
         </section>
 
         <section class="cta-section">
-            <h2>Ready to book?</h2>
-            <p>Whether you're planning a wedding, engagement, or any special event, we'd love to hear about your story. Send us an email and let's start a conversation about bringing your vision to life.</p>
+            <span class="sub-title">BOOK YOUR SHOOT</span>
+            <h2>Ready to create something unforgettable?</h2>
+            <p>Whether you are planning a grand wedding, intimate pre-wedding shoot, ring ceremony, or maternity session, share your details below and we will get back to you with personalized pricing and availability.</p>
             <div id="booking-form-container"></div>
             <script src="/form.js"></script>
         </section>

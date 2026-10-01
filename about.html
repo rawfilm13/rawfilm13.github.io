@@ -4,230 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About Us | RAW FILM Photography</title>
+    <meta name="description" content="Discover the story of RAW FILM by Lovepreet Singh Sadiora. Sony India Certified luxury wedding photographer and cinematographer based in Punjab.">
+    <link rel="canonical" href="https://rawfilmphotography.com/about.html">
 
-    <link rel="stylesheet" href="/css/details.css">
+    <!-- Stylesheets with Cache Buster -->
+    <link rel="stylesheet" href="/css/details.css?v=3.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
     <style>
-        main {
-            margin: 0 auto;
-            max-width: 1000px;
-            padding: 40px 20px 80px;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .hero {
-            display: grid;
-            gap: 30px;
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .hero h1 {
+        /* Instant Guaranteed Dark Theme */
+        body {
+            background-color: #0a0a0a !important;
+            color: #f0f0f0 !important;
             margin: 0;
-            font-size: 3rem;
-            letter-spacing: 0.05em;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .hero p {
-            max-width: 720px;
+        .about-main {
             margin: 0 auto;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #333;
-        }
-
-        .hero strong {
-            color: #000;
+            max-width: 1100px;
+            padding: 10px 20px 80px;
+            box-sizing: border-box;
         }
 
         .about-grid {
             display: grid;
             gap: 24px;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            margin-top: 30px;
         }
 
         .card {
-            border: 1px solid #e2e2e2;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            padding: 28px;
-            background: #fff;
-            box-shadow: 0 18px 40px rgb(0 0 0 / 4%);
+            padding: 32px 28px;
+            background: #141414;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 204, 0, 0.45);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8), 0 0 18px rgba(255, 204, 0, 0.2);
         }
 
         .card h2 {
             margin-top: 0;
-            font-size: 1.25rem;
-            letter-spacing: 0.03em;
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ffcc00;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ffcc00;
         }
 
         .card p {
             margin: 16px 0 0;
-            color: #555;
-            line-height: 1.75;
+            color: #a0a0a0;
+            line-height: 1.8;
+            font-size: 14px;
         }
 
+        /* Stats */
         .stats {
             display: grid;
-            gap: 16px;
-            grid-template-columns: repeat(3, minmax(80px, 1fr));
-            margin-top: 40px;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 45px;
         }
 
         .stat {
-            background: #f8f8f8;
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
-            padding: 24px 18px;
+            padding: 28px 18px;
             text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 204, 0, 0.4);
         }
 
         .stat strong {
             display: block;
-            font-size: 1.5rem;
-            color: #000;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffcc00;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.35);
         }
 
         .stat span {
             display: block;
             margin-top: 10px;
-            color: #666;
+            color: #888;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            font-size: 11px;
+            font-weight: 600;
         }
 
+        /* Photo Highlight */
         .photo-highlight {
             display: grid;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
-            grid-template-columns: 1.2fr 1fr;
-            margin-top: 56px;
+            grid-template-columns: 1.15fr 1fr;
+            margin-top: 65px;
         }
 
         .photo-highlight img {
             width: 100%;
-            border-radius: 24px;
+            border-radius: 22px;
             object-fit: cover;
-            min-height: 420px;
-            box-shadow: 0 30px 60px rgb(0 0 0 / 10%);
+            min-height: 380px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            filter: brightness(95%);
         }
 
         .photo-copy {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 18px;
         }
 
         .photo-copy h2 {
             margin: 0;
-            font-size: 2rem;
-            letter-spacing: 0.03em;
+            font-size: 2.2rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         .photo-copy p {
             margin: 0;
-            color: #444;
-            line-height: 1.8;
-        }
-
-        .social-media-section {
-            display: grid;
-            gap: 20px;
-            padding: 46px 36px;
-            margin-top: 56px;
-            border-radius: 28px;
-            background: linear-gradient(135deg, #fbfbfb 0%, #ffffff 100%);
-            border: 1px solid #ece8e4;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
-        }
-
-        .social-media-section .social-header {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .social-media-section .social-header h2 {
-            margin: 0;
-            font-size: 1.85rem;
-            font-weight: 700;
-            color: #111;
-        }
-
-        .social-media-section .social-header .insta-handle {
-            color: #111;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.03em;
-            padding: 7px 18px;
-            background: #ffffff;
-            border: 1.5px solid #e2e2e2;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-        }
-
-        .social-media-section .social-header .insta-handle:hover {
-            border-color: #ffcc00;
-            color: #000;
-            box-shadow: 0 4px 14px rgba(255, 204, 0, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .social-media-section p {
-            margin: 0;
-            color: #555;
-            line-height: 1.8;
+            color: #a0a0a0;
+            line-height: 1.85;
             font-size: 14.5px;
-            max-width: 760px;
         }
 
-        .social-links-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 6px;
-        }
-
-        .social-links-row a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: #ffffff;
-            border: 1.5px solid #e0e0e0;
-            border-radius: 50%;
-            color: #222222;
-            font-size: 18px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .social-links-row a:hover {
-            background: #ffcc00;
-            border-color: #ffcc00;
-            color: #000000;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(255, 204, 0, 0.35);
-        }
-
-        /* About Me Section (Adapted for About Page Light Background) */
+        /* About Me Section */
         .about-me-section {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 28px;
             padding: 50px 45px;
-            margin: 56px auto 40px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+            margin: 65px auto 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
 
         .about-me-grid {
@@ -243,8 +181,8 @@
             height: 100%;
             min-height: 400px;
             max-height: 480px;
-            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.8);
+            border: 1.5px solid rgba(255, 204, 0, 0.3);
         }
 
         .about-me-img-wrapper img {
@@ -256,7 +194,7 @@
         }
 
         .about-me-content .sub-title {
-            color: #c88a00;
+            color: #ffcc00;
             letter-spacing: 4px;
             font-size: 11px;
             font-weight: 700;
@@ -266,17 +204,17 @@
         }
 
         .about-me-content h2 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 700;
-            color: #111111;
+            color: #ffffff;
             margin: 0 0 16px;
             letter-spacing: 0.5px;
         }
 
         .about-me-content .about-bio {
-            color: #444;
+            color: #a8a8a8;
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.85;
             margin: 0 0 24px;
         }
 
@@ -295,20 +233,20 @@
             justify-content: flex-start;
             text-align: left;
             gap: 14px;
-            background: #fbfbfb;
-            border: 1px solid #ebebeb;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 13px 20px;
             border-radius: 14px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
             transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
             box-sizing: border-box;
         }
 
         .about-badges li:hover {
-            transform: translateX(4px);
-            background: #ffffff;
+            transform: translateX(5px);
+            background: #202020;
             border-color: #ffcc00;
-            box-shadow: 0 6px 18px rgba(255, 204, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.25);
         }
 
         .about-badges .badge-icon {
@@ -324,10 +262,97 @@
         .about-badges .badge-text {
             font-size: 14px;
             font-weight: 600;
-            color: #222;
+            color: #e5e5e5;
             line-height: 1.35;
             letter-spacing: 0.3px;
             text-align: left;
+        }
+
+        /* Social Media Section */
+        .social-media-section {
+            display: grid;
+            gap: 22px;
+            padding: 46px 36px;
+            margin-top: 65px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #151515 0%, #101010 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        .social-media-section .social-header {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .social-media-section .social-header h2 {
+            margin: 0;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .social-media-section .social-header .insta-handle {
+            color: #ffcc00;
+            font-weight: 600;
+            font-size: 13.5px;
+            letter-spacing: 0.03em;
+            padding: 8px 20px;
+            background: #1a1a1a;
+            border: 1.5px solid rgba(255, 204, 0, 0.4);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-media-section .social-header .insta-handle:hover {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .social-media-section p {
+            margin: 0;
+            color: #a0a0a0;
+            line-height: 1.8;
+            font-size: 14.5px;
+            max-width: 760px;
+        }
+
+        .social-links-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        .social-links-row a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: #1a1a1a;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .social-links-row a:hover {
+            background: #ffcc00;
+            border-color: #ffcc00;
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.45);
         }
 
         @media (max-width: 900px) {
@@ -342,7 +367,6 @@
 
             .about-me-section {
                 padding: 35px 20px;
-                margin-bottom: 40px;
                 text-align: center;
             }
 
@@ -371,7 +395,6 @@
             .about-me-content .about-bio {
                 text-align: center;
                 margin: 0 auto 24px;
-                font-size: 14.5px;
             }
 
             .about-badges {
@@ -379,16 +402,12 @@
                 margin: 0 auto;
                 width: 100%;
             }
-
-            .about-badges li {
-                justify-content: flex-start;
-                text-align: left;
-            }
         }
 
         @media (max-width: 720px) {
-            .hero h1 {
-                font-size: 2.4rem;
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 14px;
             }
 
             .social-media-section {
@@ -405,62 +424,34 @@
                 justify-content: center;
             }
         }
-
-        @media (max-width: 480px) {
-            .about-me-content h2 {
-                font-size: 1.6rem !important;
-            }
-
-            .about-badges {
-                max-width: 100%;
-            }
-
-            .about-badges li {
-                padding: 12px 14px;
-                gap: 12px;
-            }
-
-            .about-badges .badge-icon {
-                font-size: 18px;
-                width: 22px;
-            }
-
-            .about-badges .badge-text {
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 
-<body>
+<body class="prewedding-page gallery-page">
     <!-- Global Header Component (Single Line) -->
     <div id="site-header"></div>
     <script src="/header.js"></script>
 
-    <main>
-        <section class="hero">
-            <h1>About Raw Film</h1>
-            <p>We create timeless wedding stories with a thoughtful blend of candid emotion and elegant cinematography.
-                Every frame is designed to reflect your authentic moments, from intimate vows to joyful celebration.</p>
-        </section>
+    <!-- Page Header (Pre-Wedding Theme) -->
+    <header class="prewedding-hero gallery-hero">
+        <span class="prewedding-badge gallery-badge">Our Story &amp; Philosophy</span>
+        <h1>About Raw Film</h1>
+        <p>We create timeless wedding stories with a thoughtful blend of candid emotion and elegant cinematography. Every frame is designed to reflect your authentic moments, from intimate vows to joyful celebration.</p>
+    </header>
 
+    <main class="about-main">
         <div class="about-grid">
             <article class="card">
                 <h2>Our Approach</h2>
-                <p>Raw Films captures your day in a natural, cinematic way. We focus on real connection, light, and
-                    movement so the final film feels personal, cinematic, and beautifully true to your story.</p>
+                <p>Raw Films captures your day in a natural, cinematic way. We focus on real connection, light, and movement so the final film feels personal, cinematic, and beautifully true to your story.</p>
             </article>
             <article class="card">
                 <h2>Why Choose Us</h2>
-                <p>Every couple receives a tailored experience, from pre-wedding planning to on-the-day direction. We
-                    combine a refined visual style with a relaxed presence so your celebration stays comfortable and
-                    unforgettable.</p>
+                <p>Every couple receives a tailored experience, from pre-wedding planning to on-the-day direction. We combine a refined visual style with a relaxed presence so your celebration stays comfortable and unforgettable.</p>
             </article>
             <article class="card">
                 <h2>Our Promise</h2>
-                <p>We bring care, attention, and consistency to every project. Your highlights, portraits, and ceremony
-                    moments are edited with a cinematic rhythm that feels polished without losing the warmth of the day.
-                </p>
+                <p>We bring care, attention, and consistency to every project. Your highlights, portraits, and ceremony moments are edited with a cinematic rhythm that feels polished without losing the warmth of the day.</p>
             </article>
         </div>
 
@@ -480,15 +471,14 @@
         </section>
 
         <section class="photo-highlight">
-            <img src="/image/about.jpeg" alt="Wedding photography highlight">
+            <img src="/image/about.jpeg" alt="Wedding photography highlight" loading="lazy">
             <div class="photo-copy">
                 <h2>Moments framed with heart</h2>
-                <p>Our imagery is created to feel timeless and intimate. We blend quiet portrait moments with the energy
-                    of the day, delivering photos that look elegant and full of emotion.</p>
-                <p>Whether it is a tender glance, a joyful celebration, or a cinematic detail, every photo is carefully
-                    composed to preserve the atmosphere of your wedding day.</p>
+                <p>Our imagery is created to feel timeless and intimate. We blend quiet portrait moments with the energy of the day, delivering photos that look elegant and full of emotion.</p>
+                <p>Whether it is a tender glance, a joyful celebration, or a cinematic detail, every photo is carefully composed to preserve the atmosphere of your wedding day.</p>
             </div>
         </section>
+
         <!-- About Me Section -->
         <section class="about-me-section">
             <div class="about-me-grid">
