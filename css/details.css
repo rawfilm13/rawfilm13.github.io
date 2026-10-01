@@ -92,7 +92,7 @@ main .photos img {
 }
 
 .footer-col ul li a:hover {
-    color: #f1683a;
+    color: #ffcc00;
 }
 
 .footer-col p {
@@ -128,11 +128,11 @@ main .photos img {
 }
 
 .footer-socials a:hover {
-    background: #f1683a;
-    border-color: #f1683a;
-    color: #ffffff;
+    background: #ffcc00;
+    border-color: #ffcc00;
+    color: #000000;
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(241, 104, 58, 0.45);
+    box-shadow: 0 6px 15px rgba(255, 204, 0, 0.45);
 }
 
 .footer-bottom {

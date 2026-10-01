@@ -74,9 +74,9 @@
             .booking-form .form-group select:focus,
             .booking-form .form-group textarea:focus {
                 outline: none;
-                border-color: #f1683a;
+                border-color: #ffcc00;
                 background: rgba(255, 255, 255, 0.09);
-                box-shadow: 0 0 12px rgba(241, 104, 58, 0.35);
+                box-shadow: 0 0 12px rgba(255, 204, 0, 0.35);
             }
 
             .booking-form .form-submit-row {
@@ -86,11 +86,11 @@
 
             .booking-form .cta-btn {
                 display: inline-block;
-                background-color: #f1683a;
-                color: #fff;
+                background-color: #ffcc00;
+                color: #000000;
                 padding: 14px 42px;
                 border-radius: 30px;
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 14px;
                 letter-spacing: 1px;
                 text-decoration: none;
@@ -101,9 +101,9 @@
             }
 
             .booking-form .cta-btn:hover {
-                background-color: #ff7e54;
+                background-color: #ffd633;
                 transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba(241, 104, 58, 0.4);
+                box-shadow: 0 8px 22px rgba(255, 204, 0, 0.45);
             }
 
             .booking-form .cta-btn:disabled {
@@ -251,6 +251,16 @@
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData.entries());
 
+                // Store raw phone for WhatsApp / Email fallback
+                const rawPhone = data.phone ? data.phone.trim() : '';
+
+                // In Google Sheets, values starting with '+' are treated as mathematical formulas (=+91 98772...),
+                // causing formula parse errors (#ERROR!) or disappearing text.
+                // Prepending a single quote (') forces Google Sheets to store and display it as plain text (+91...).
+                if (rawPhone) {
+                    data.phone = rawPhone.startsWith("'") ? rawPhone : "'" + rawPhone;
+                }
+
                 // Primary Endpoint: Google Apps Script Web App (Saves to Google Sheet + sends notification)
                 const googleScriptURL = 'https://script.google.com/macros/s/AKfycbzWK5IcwE6Rqc4PBkIaVM1EGzhZsrAMhs0_n-JwMZU9oB9wEcdGnX9skOCHqr4fLOM1/exec';
 
@@ -284,7 +294,7 @@
                     const waMsg = encodeURIComponent(
                         `*New Photoshoot Booking Inquiry*\n` +
                         `Name: ${data.name || ''}\n` +
-                        `Phone: ${data.phone || ''}\n` +
+                        `Phone: ${rawPhone || ''}\n` +
                         `Email: ${data.email || ''}\n` +
                         `Type: ${data.shootType || ''}\n` +
                         `Date: ${data.eventDate || ''}\n` +
@@ -300,7 +310,7 @@
                             <a href="${waUrl}" target="_blank" class="cta-btn" style="background:#25d366; color:#fff; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
                                 💬 Send on WhatsApp Directly
                             </a>
-                            <a href="mailto:info@rawfilmphotography.com?subject=New Booking - ${encodeURIComponent(data.name || 'Client')}&body=${waMsg}" class="cta-btn" style="background:#f1683a; color:#fff; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
+                            <a href="mailto:info@rawfilmphotography.com?subject=New Booking - ${encodeURIComponent(data.name || 'Client')}&body=${waMsg}" class="cta-btn" style="background:#ffcc00; color:#000; font-weight:700; display:inline-block; padding:10px 22px; font-size:13px; text-decoration:none; margin: 4px; border-radius:20px;">
                                 ✉️ Send via Email App
                             </a>
                         `;

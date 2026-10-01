@@ -40,8 +40,8 @@ if (carouselDom && nextDom && prevDom) {
     let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
     let thumbnailItemsDom = thumbnailBorderDom ? thumbnailBorderDom.querySelectorAll('.item') : [];
     
-    // Total slides in the carousel (Pre Wedding, Ring Ceremony, Wedding, Maternity)
-    const totalSlides = 4;
+    // Total slides in the carousel (Pre Wedding, Ring Ceremony, Wedding, Maternity, Fashion Portfolio)
+    const totalSlides = 5;
     let currentSlideIndex = 0; // Starts at 0 (Pre Wedding)
     let isTransitioning = false;
 

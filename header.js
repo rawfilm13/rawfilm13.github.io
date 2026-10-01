@@ -80,14 +80,14 @@
                 left: 0;
                 width: 0%;
                 height: 2px;
-                background-color: #f1683a;
+                background-color: #ffcc00;
                 transition: width 0.3s ease;
-                box-shadow: 0 0 8px #f1683a;
+                box-shadow: 0 0 8px #ffcc00;
             }
 
             .site-header-dark .navlinks a:hover {
                 color: #ffffff !important;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 1), 0 0 18px rgba(241, 104, 58, 0.7);
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 1), 0 0 18px rgba(255, 204, 0, 0.6);
                 transform: translateY(-2px);
             }
 
@@ -97,7 +97,7 @@
             }
 
             .site-header-dark .navlinks a.active {
-                color: #f1683a !important;
+                color: #ffcc00 !important;
             }
 
             /* Hamburger Button */
@@ -131,8 +131,8 @@
             }
 
             .site-header-dark .hamburger:hover {
-                background: rgba(241, 104, 58, 0.85);
-                border-color: #f1683a;
+                background: rgba(255, 204, 0, 0.85);
+                border-color: #ffcc00;
             }
 
             .site-header-dark .hamburger.active span:nth-child(1) {
@@ -198,7 +198,7 @@
 
                 .site-header-dark .navlinks a:hover,
                 .site-header-dark .navlinks a:active {
-                    color: #f1683a !important;
+                    color: #ffcc00 !important;
                     transform: none;
                 }
             }

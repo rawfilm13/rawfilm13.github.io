@@ -134,50 +134,299 @@
             line-height: 1.8;
         }
 
-        .instagram {
+        .social-media-section {
             display: grid;
-            gap: 30px;
-            padding: 46px 32px;
+            gap: 20px;
+            padding: 46px 36px;
             margin-top: 56px;
             border-radius: 28px;
-            background: linear-gradient(135deg, #f8f4f1 0%, #fff 100%);
+            background: linear-gradient(135deg, #fbfbfb 0%, #ffffff 100%);
             border: 1px solid #ece8e4;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
         }
 
-        .instagram .insta-header {
+        .social-media-section .social-header {
             display: flex;
             gap: 18px;
             align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap;
         }
 
-        .instagram .insta-header h2 {
+        .social-media-section .social-header h2 {
             margin: 0;
-            font-size: 1.75rem;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #111;
         }
 
-        .instagram .insta-header a {
-            color: #000;
+        .social-media-section .social-header .insta-handle {
+            color: #111;
             font-weight: 600;
-            letter-spacing: 0.05em;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+            padding: 7px 18px;
+            background: #ffffff;
+            border: 1.5px solid #e2e2e2;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
-        .instagram p {
+        .social-media-section .social-header .insta-handle:hover {
+            border-color: #ffcc00;
+            color: #000;
+            box-shadow: 0 4px 14px rgba(255, 204, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .social-media-section p {
             margin: 0;
             color: #555;
-            line-height: 1.75;
+            line-height: 1.8;
+            font-size: 14.5px;
             max-width: 760px;
+        }
+
+        .social-links-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        .social-links-row a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: #ffffff;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 50%;
+            color: #222222;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .social-links-row a:hover {
+            background: #ffcc00;
+            border-color: #ffcc00;
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(255, 204, 0, 0.35);
+        }
+
+        /* About Me Section (Adapted for About Page Light Background) */
+        .about-me-section {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 28px;
+            padding: 50px 45px;
+            margin: 56px auto 40px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-me-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-me-img-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 400px;
+            max-height: 480px;
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .about-me-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(95%);
+        }
+
+        .about-me-content .sub-title {
+            color: #c88a00;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .about-me-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #111111;
+            margin: 0 0 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-me-content .about-bio {
+            color: #444;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0 0 24px;
+        }
+
+        .about-badges {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .about-badges li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 14px;
+            background: #fbfbfb;
+            border: 1px solid #ebebeb;
+            padding: 13px 20px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .about-badges li:hover {
+            transform: translateX(4px);
+            background: #ffffff;
+            border-color: #ffcc00;
+            box-shadow: 0 6px 18px rgba(255, 204, 0, 0.25);
+        }
+
+        .about-badges .badge-icon {
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            flex-shrink: 0;
+        }
+
+        .about-badges .badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.35;
+            letter-spacing: 0.3px;
+            text-align: left;
         }
 
         @media (max-width: 900px) {
             .photo-highlight {
                 grid-template-columns: 1fr;
             }
+
+            .about-me-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-me-section {
+                padding: 35px 20px;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .about-me-img-wrapper {
+                min-height: 280px;
+                max-height: 380px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .about-me-content {
+                text-align: center;
+            }
+
+            .about-me-content .sub-title {
+                text-align: center;
+                margin: 0 auto 8px;
+            }
+
+            .about-me-content h2 {
+                font-size: 1.85rem;
+                text-align: center;
+                margin: 0 auto 16px;
+            }
+
+            .about-me-content .about-bio {
+                text-align: center;
+                margin: 0 auto 24px;
+                font-size: 14.5px;
+            }
+
+            .about-badges {
+                max-width: 440px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .about-badges li {
+                justify-content: flex-start;
+                text-align: left;
+            }
         }
 
         @media (max-width: 720px) {
             .hero h1 {
                 font-size: 2.4rem;
+            }
+
+            .social-media-section {
+                padding: 35px 20px;
+                text-align: center;
+            }
+
+            .social-media-section .social-header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .social-links-row {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-me-content h2 {
+                font-size: 1.6rem !important;
+            }
+
+            .about-badges {
+                max-width: 100%;
+            }
+
+            .about-badges li {
+                padding: 12px 14px;
+                gap: 12px;
+            }
+
+            .about-badges .badge-icon {
+                font-size: 18px;
+                width: 22px;
+            }
+
+            .about-badges .badge-text {
+                font-size: 13px;
             }
         }
     </style>
@@ -240,29 +489,52 @@
                     composed to preserve the atmosphere of your wedding day.</p>
             </div>
         </section>
-        <section class="photo-highlight">
-            <img src="/image/me.jpeg" alt="Me">
-            <div class="photo-copy">
-                <h2>About Me</h2>
-                <p>RAW FILM by Lovepreet Singh Sadiora is dedicated to capturing emotions, love, and unforgettable
-                    moments through cinematic photography and videography. Certified by Sony India and a proud member of
-                    PPA Punjab, we believe every story deserves to be told beautifully.</p>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li>🏆 Sony India Certified Photographer</li>
-                    <li>📸 Professional Wedding Cinematographer</li>
-                    <li>🎖️ PPA Punjab Member</li>
-                    <li>🎬 Founder of RAW FILM</li>
-                </ul>
+        <!-- About Me Section -->
+        <section class="about-me-section">
+            <div class="about-me-grid">
+                <div class="about-me-img-wrapper">
+                    <img src="/image/me.jpeg" alt="Lovepreet Singh Sadiora - Raw Film" loading="lazy">
+                </div>
+                <div class="about-me-content">
+                    <span class="sub-title">MEET THE ARTIST</span>
+                    <h2>About Me</h2>
+                    <p class="about-bio">
+                        RAW FILM by Lovepreet Singh Sadiora is dedicated to capturing emotions, love, and unforgettable moments through cinematic photography and videography. Certified by Sony India and a proud member of PPA Punjab, we believe every story deserves to be told beautifully.
+                    </p>
+                    <ul class="about-badges">
+                        <li>
+                            <span class="badge-icon">🏆</span>
+                            <span class="badge-text">Sony India Certified Photographer</span>
+                        </li>
+                        <li>
+                            <span class="badge-icon">📷</span>
+                            <span class="badge-text">Professional Wedding Cinematographer</span>
+                        </li>
+                        <li>
+                            <span class="badge-icon">🏅</span>
+                            <span class="badge-text">PPA Punjab Member</span>
+                        </li>
+                        <li>
+                            <span class="badge-icon">🎬</span>
+                            <span class="badge-text">Founder of RAW FILM</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section class="instagram">
-            <div class="insta-header">
-                <h2>Follow us on Instagram</h2>
-                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer">@rawfilm13</a>
+        <section class="social-media-section">
+            <div class="social-header">
+                <h2>Follow Us On Social Media</h2>
+                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer" class="insta-handle">@rawfilm13</a>
             </div>
-            <p>Explore more of our latest weddings, behind-the-scenes moments, and cinematic previews. Instagram is
-                where we share fresh inspiration and the stories behind the images.</p>
+            <p>Explore more of our latest weddings, behind-the-scenes moments, and cinematic previews. Follow us across our social channels where we share fresh inspiration and the stories behind the images.</p>
+            <div class="social-links-row">
+                <a href="https://www.facebook.com/lucky.singh.261176" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/rawfilm13" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@rawfilm13" target="_blank" rel="noreferrer" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                <a href="https://wa.me/+919877281570" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+            </div>
         </section>
     </main>
 

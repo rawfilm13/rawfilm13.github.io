@@ -33,7 +33,7 @@
                 transition: color 0.2s ease;
             }
             .footer-col.links-col ul li a:hover {
-                color: #f1683a !important;
+                color: #ffcc00 !important;
             }
             .footer-bottom .copyright-text {
                 color: #ccc !important;
@@ -86,6 +86,7 @@
                     <li><a href="/ringceremony.html">Ring Ceremony</a></li>
                     <li><a href="/wedding.html">Wedding Shoots</a></li>
                     <li><a href="/maternity.html">Maternity</a></li>
+                    <li><a href="/portfolio.html">Professional Photoshoot</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>

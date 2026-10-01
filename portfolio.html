@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre Wedding</title>
+    <title>Portfolio | RAW FILM Photography</title>
 
     <link rel="stylesheet" href="/css/details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <script src="/header.js"></script>
 
     <main>
-        <h1>PRE WEDDING SHOOT</h1>
+        <h1>FASHION &amp; MODEL PORTFOLIO</h1>
 
         <div class="photos" id="gallery"></div>
     </main>
@@ -27,22 +27,16 @@
     
     <script>
         const images = [
-            "cover", "thumbnail", "3", "DSC01266", "DSC01309", "DSC01315", "DSC01333", "DSC01341", 
-            "DSC01398", "DSC01477", "DSC01517", "DSC01556", "DSC01570", "DSC01614", "DSC01700", 
-            "DSC01773", "DSC01798", "DSC01870", "DSC01914", "DSC02377", "DSC02396", "DSC02440", 
-            "DSC02536", "DSC02572", "DSC03128", "DSC03152", "DSC03196", "DSC03239", "DSC03248", 
-            "DSC03249", "DSC03259", "DSC03287", "DSC03320", "DSC03338", "DSC03382", "DSC07936", 
-            "DSC07942", "DSC07959", "DSC07976_2", "DSC08021", "DSC08171", "DSC08224", "DSC08271", 
-            "DSC08278", "DSC08309", "DSC08347", "1 (42)", "3 (10)", "5 (24)", "5 (51)", "5 (52)", 
-            "8 (32)", "8 (4)", "8 (45)"
+            "IMG_6117", "IMG_6118", "IMG_6119", "IMG_6120", "IMG_6121", "IMG_6122", 
+            "IMG_6123", "IMG_6124", "IMG_6125", "portfolio_10", "portfolio_11", "portfolio_12"
         ];
 
         const gallery = document.getElementById("gallery");
 
         images.forEach(file => {
             const img = document.createElement("img");
-            img.src = `/image/prewedding/${file}.webp`;
-            img.alt = `Raw Film Pre-Wedding Shoot ${file}`;
+            img.src = `/image/portfolio/${file}.webp`;
+            img.alt = `Raw Film Model Portfolio Shoot ${file}`;
             img.loading = "lazy";
             gallery.appendChild(img);
         });
