@@ -182,6 +182,7 @@
                         <option value="Ring Ceremony">Ring Ceremony</option>
                         <option value="Wedding">Wedding Shoot</option>
                         <option value="Maternity">Maternity Shoot</option>
+                        <option value="Portfolio">Portfolio Photoshoot</option>
                         <option value="Other">Other Event</option>
                     </select>
                 </div>

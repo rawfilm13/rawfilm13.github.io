@@ -87,7 +87,7 @@
                     <li><a href="/ringceremony.html">Ring Ceremony</a></li>
                     <li><a href="/wedding.html">Wedding Shoots</a></li>
                     <li><a href="/maternity.html">Maternity Shoot</a></li>
-                    <li><a href="/portfolio.html">Professional Photoshoot</a></li>
+                    <li><a href="/portfolio.html">Portfolio Photoshoot</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>

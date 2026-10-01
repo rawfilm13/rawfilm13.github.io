@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Photoshoot &amp; Portfolio | RAW FILM Photography</title>
-    <meta name="description" content="Editorial fashion photography, model portfolios, and professional studio photoshoots by RAW FILM. High-impact lighting and artistic portraits in Punjab.">
+    <title>Portfolio Photoshoot | RAW FILM Photography</title>
+    <meta name="description" content="Portfolio photography, model lookbooks, and creative studio photoshoots by RAW FILM. High-impact lighting and artistic portraits in Punjab.">
     <link rel="canonical" href="https://rawfilmphotography.com/portfolio.html">
 
     <!-- Stylesheets with Cache Buster -->
@@ -28,13 +28,13 @@
 <body class="prewedding-page gallery-page">
     <!-- Global Header Component (Single Line) -->
     <div id="site-header"></div>
-    <script src="/header.js"></script>
+    <script src="/header.js?v=2.1"></script>
 
     <!-- Page Header (Identical to Pre-Wedding Theme) -->
     <header class="prewedding-hero gallery-hero">
-        <span class="prewedding-badge gallery-badge">Editorial, Fashion &amp; Studio Lighting</span>
-        <h1>Professional Photoshoots</h1>
-        <p>High-impact visual narratives, high-fashion model lookbooks, and striking commercial studio portraits designed with precision lighting to showcase unique personality and brand power.</p>
+        <span class="prewedding-badge gallery-badge">Portraits, Editorial &amp; Studio Lighting</span>
+        <h1>Portfolio Photoshoot</h1>
+        <p>High-impact visual narratives, creative model portfolios, and striking studio portraits designed with precision lighting to showcase unique personality and style.</p>
     </header>
 
     <main>
@@ -84,7 +84,7 @@
 
     <!-- Global Footer Component (Single Line) -->
     <div id="site-footer"></div>
-    <script src="/footer.js"></script>
+    <script src="/footer.js?v=2.1"></script>
 
     <!-- Swiper 11 JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -102,14 +102,14 @@
         portfolioImages.forEach((imgFile) => {
             const encodedFile = encodeURIComponent(imgFile);
             const imgSrc = `/image/portfolio/${encodedFile}.webp`;
-            const caption = "Professional Photoshoot &bull; RAW FILM";
+            const caption = "Portfolio Photoshoot &bull; RAW FILM";
 
             // 1. Slider Slide
             const slide = document.createElement("div");
             slide.className = "swiper-slide couple-slide";
             slide.innerHTML = `
                 <div class="couple-card" onclick="openLightbox('${imgSrc}', '${caption}')">
-                    <img class="card-img" src="${imgSrc}" alt="Professional photoshoot - RAW FILM" loading="lazy">
+                    <img class="card-img" src="${imgSrc}" alt="Portfolio photoshoot - RAW FILM" loading="lazy">
                     <div class="couple-card-overlay">
                         <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
                     </div>
@@ -122,7 +122,7 @@
             card.className = "couple-card";
             card.onclick = () => openLightbox(imgSrc, caption);
             card.innerHTML = `
-                <img class="card-img" src="${imgSrc}" alt="Professional photoshoot - RAW FILM" loading="lazy">
+                <img class="card-img" src="${imgSrc}" alt="Portfolio photoshoot - RAW FILM" loading="lazy">
                 <div class="couple-card-overlay">
                     <div class="zoom-icon"><i class="fa fa-search-plus"></i></div>
                 </div>

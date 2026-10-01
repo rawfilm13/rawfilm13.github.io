@@ -258,7 +258,7 @@
                         <a href="/ringceremony.html">Ring Ceremony</a>
                         <a href="/wedding.html">Wedding Shoots</a>
                         <a href="/maternity.html">Maternity Shoot</a>
-                        <a href="/portfolio.html">Professional Photoshoot</a>
+                        <a href="/portfolio.html">Portfolio Photoshoot</a>
                     </div>
                 </div>
                 <a href="/about.html">About</a>

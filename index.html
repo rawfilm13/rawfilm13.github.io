@@ -140,7 +140,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=2.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
@@ -154,6 +154,18 @@
             </a>
             <div class="navlinks" id="navLinks">
                 <a href="/">Home</a>
+                <div class="nav-dropdown" id="navDropdown">
+                    <a href="/recent-work.html" class="nav-dropdown-trigger" id="dropdownTrigger">
+                        Our Recent Work <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/prewedding.html">Pre Wedding Shoots</a>
+                        <a href="/ringceremony.html">Ring Ceremony</a>
+                        <a href="/wedding.html">Wedding Shoots</a>
+                        <a href="/maternity.html">Maternity Shoot</a>
+                        <a href="/portfolio.html">Portfolio Photoshoot</a>
+                    </div>
+                </div>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
             </div>
@@ -278,7 +290,7 @@
                 <img src="image/portfolio/IMG_6119.webp">
                 <div class="content">
                     <div class="author">RAWFILM</div>
-                    <div class="topic">PROFESSIONAL</div>
+                    <div class="topic">PORTFOLIO</div>
                     <div class="title">PHOTOSHOOT</div>
                     <div class="des">
                         Step into the spotlight with high-fashion portraits and creative model portfolios. We combine
@@ -357,10 +369,10 @@
                 <img src="image/portfolio/thumbnail.webp">
                 <div class="content">
                     <div class="title">
-                        FASHION
+                        PORTFOLIO
                     </div>
                     <div class="description">
-                        Portfolio
+                        Photoshoot
                     </div>
                 </div>
             </div>
@@ -386,7 +398,7 @@
             </div>
 
             <div class="teaser-video-wrapper">
-                <div class="teaser-video-container" id="teaserPlayerBox">
+                <div class="teaser-video-container" id="teaserPlayerBox" onclick="playTeaserVideo(event)">
                     <div class="teaser-poster" id="teaserPoster"
                         style="background-image: url('https://img.youtube.com/vi/cq-bTCEY4KY/maxresdefault.jpg');"
                         title="Click to play teaser" onclick="playTeaserVideo(event)">
@@ -461,12 +473,12 @@
                 </div>
 
                 <div class="category-card">
-                    <a href="/portfolio.html" class="card-img-link" aria-label="Fashion Portfolio Shoot">
-                        <img src="image/portfolio/cover.webp" alt="Fashion Portfolio Shoot" loading="lazy">
+                    <a href="/portfolio.html" class="card-img-link" aria-label="Portfolio Photoshoot">
+                        <img src="image/portfolio/cover.webp" alt="Portfolio Photoshoot" loading="lazy">
                     </a>
                     <div class="card-info">
-                        <h3><a href="/portfolio.html">Fashion Portfolio</a></h3>
-                        <p>High-fashion editorial looks and bold model portraits.</p>
+                        <h3><a href="/portfolio.html">Portfolio Photoshoot</a></h3>
+                        <p>Creative portraits, model portfolios, and artistic studio frames.</p>
                         <a href="/portfolio.html" class="card-link">Explore Gallery &rarr;</a>
                     </div>
                 </div>
@@ -1009,7 +1021,7 @@
 
     <!-- Global Footer & Floating Action Buttons Component (Single Line) -->
     <div id="site-footer"></div>
-    <script src="/footer.js"></script>
+    <script src="/footer.js?v=2.1"></script>
 
     <!-- Swiper JS & Testimonials Init -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1067,23 +1079,40 @@
             }
         });
 
-        // Global Play Teaser Function (bypasses any DOMContentLoaded or external script wait)
+        // Global Play Teaser Function
         function playTeaserVideo(e) {
             if (e) {
-                e.stopPropagation();
+                if (e.preventDefault) e.preventDefault();
+                if (e.stopPropagation) e.stopPropagation();
             }
             var poster = document.getElementById('teaserPoster');
             var holder = document.getElementById('teaserIframeHolder');
             if (!holder) return;
+
+            // If already loaded, do nothing
+            if (holder.querySelector('iframe')) return;
+
             if (poster) {
                 poster.classList.add('is-hidden');
                 poster.style.display = 'none';
             }
-            holder.innerHTML = '<iframe src="https://www.youtube.com/embed/cq-bTCEY4KY?autoplay=1&rel=0&controls=1&playsinline=1" title="RAW FILM Cinematic Teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>';
+            holder.classList.add('is-active');
+            holder.style.display = 'block';
+            holder.innerHTML = '<iframe src="https://www.youtube.com/embed/cq-bTCEY4KY?autoplay=1&mute=0&rel=0&controls=1&playsinline=1&enablejsapi=1" title="RAW FILM Cinematic Teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe>';
         }
+
+        // Additional Event Listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            var box = document.getElementById('teaserPlayerBox');
+            var poster = document.getElementById('teaserPoster');
+            var playBtn = document.getElementById('teaserPlayBtn');
+            if (box) box.addEventListener('click', playTeaserVideo);
+            if (poster) poster.addEventListener('click', playTeaserVideo);
+            if (playBtn) playBtn.addEventListener('click', playTeaserVideo);
+        });
     </script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2.2"></script>
 </body>
 
 </html>

@@ -33,33 +33,42 @@ if (hamburgerBtn && navLinks) {
 let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 let carouselDom = document.querySelector('.carousel');
-const overviewSection = document.getElementById('overview');
+const teaserSection = document.getElementById('teaser') || document.getElementById('overview');
 
 if (carouselDom && nextDom && prevDom) {
     let SliderDom = carouselDom.querySelector('.carousel .list');
     let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
     let thumbnailItemsDom = thumbnailBorderDom ? thumbnailBorderDom.querySelectorAll('.item') : [];
     
-    // Total slides in the carousel (Traditional Pre Wedding, Western Pre Wedding, Ring Ceremony, Wedding, Maternity, Fashion Portfolio)
-    const totalSlides = 6;
-    let currentSlideIndex = 0; // Starts at 0 (Pre Wedding)
+    // Dynamic slide count based on actual DOM items
+    const totalSlides = SliderDom.querySelectorAll('.item').length || 6;
+    let currentSlideIndex = 0; // Starts at 0 (Traditional Pre Wedding)
     let isTransitioning = false;
+    let wheelCooldown = false;
 
     if (thumbnailBorderDom && thumbnailItemsDom.length > 0) {
         thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
     }
 
     let timeRunning = 1500;
-    let timeAutoNext = 7000;
+    let timeAutoNext = 5000;
     let runTimeOut;
     let runNextAuto;
 
     function resetAutoTimer() {
         clearTimeout(runNextAuto);
-        // Only run auto-slider when user is at the top section
-        if (window.scrollY < 100) {
+        // Only run auto-slider when user is at the hero section
+        if (window.scrollY < 80) {
             runNextAuto = setTimeout(() => {
-                showSlider('next', true); // Auto next, does not force scroll down
+                if (currentSlideIndex < totalSlides - 1) {
+                    showSlider('next', true);
+                } else {
+                    // All slides have finished their full presentation!
+                    // Smoothly transition down to the Cinematic Teaser section
+                    if (teaserSection && window.scrollY < 80) {
+                        teaserSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             }, timeAutoNext);
         }
     }
@@ -68,20 +77,21 @@ if (carouselDom && nextDom && prevDom) {
 
     // Pause/Resume auto-slider on page scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 150) {
+        if (window.scrollY > 80) {
             clearTimeout(runNextAuto);
         } else {
             resetAutoTimer();
         }
-
-        // When user scrolls back up to the top, reset slide position to last slide
-        if (window.scrollY <= 10 && currentSlideIndex < totalSlides - 1) {
-            // User scrolled back to top
-        }
     }, { passive: true });
 
     nextDom.onclick = function() {
-        triggerSlide('next');
+        if (currentSlideIndex < totalSlides - 1) {
+            triggerSlide('next');
+        } else if (teaserSection) {
+            teaserSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            triggerSlide('next');
+        }
     };
 
     prevDom.onclick = function() {
@@ -123,30 +133,34 @@ if (carouselDom && nextDom && prevDom) {
         showSlider(type);
         setTimeout(() => {
             isTransitioning = false;
-        }, 750);
+        }, 850);
     }
 
     // ----------------------------------------------------
     // Strict Mouse Wheel / Trackpad Scroll Handling (PC)
     // ----------------------------------------------------
     window.addEventListener('wheel', (e) => {
-        // If already scrolled into the overview/footer section, normal scroll happens
+        // If already scrolled into the teaser/overview/footer section, normal scroll happens
         if (window.scrollY > 30) return;
 
         // DOWNWARD SCROLL
         if (e.deltaY > 15) {
-            // If user has NOT reached the 4th (last) slide, NEVER scroll the page down!
+            e.preventDefault();
+            if (wheelCooldown || isTransitioning) return;
+
+            // If user has NOT reached the last slide, advance slide by slide
             if (currentSlideIndex < totalSlides - 1) {
-                e.preventDefault();
-                if (!isTransitioning) {
-                    triggerSlide('next');
-                }
+                wheelCooldown = true;
+                triggerSlide('next');
+                setTimeout(() => { wheelCooldown = false; }, 850);
             } else {
-                // User IS on the 4th slide (Maternity) and scrolls down:
-                // Now allow smooth scroll down to the next section!
-                if (overviewSection) {
-                    overviewSection.scrollIntoView({ behavior: 'smooth' });
+                // User IS on the last slide and scrolls down:
+                // Now allow smooth scroll down to the teaser section!
+                wheelCooldown = true;
+                if (teaserSection) {
+                    teaserSection.scrollIntoView({ behavior: 'smooth' });
                 }
+                setTimeout(() => { wheelCooldown = false; }, 1000);
             }
         }
         // UPWARD SCROLL
@@ -154,9 +168,10 @@ if (carouselDom && nextDom && prevDom) {
             if (window.scrollY <= 15) {
                 if (currentSlideIndex > 0) {
                     e.preventDefault();
-                    if (!isTransitioning) {
-                        triggerSlide('prev');
-                    }
+                    if (wheelCooldown || isTransitioning) return;
+                    wheelCooldown = true;
+                    triggerSlide('prev');
+                    setTimeout(() => { wheelCooldown = false; }, 850);
                 }
             }
         }
@@ -179,23 +194,12 @@ if (carouselDom && nextDom && prevDom) {
         }
     }, { passive: true });
 
-    // Crucial: prevent mobile browser from scrolling page down before all 4 slides complete
+    // Prevent mobile browser from premature page jump before slides complete
     window.addEventListener('touchmove', (e) => {
         if (!isTouchingCarousel || window.scrollY > 20) return;
-
-        const currentY = e.touches[0].clientY;
-        const diffY = currentY - touchStartY;
-
-        // If not on the last slide, prevent native page vertical scroll!
         if (currentSlideIndex < totalSlides - 1) {
             if (e.cancelable) {
                 e.preventDefault(); // Locks page scroll so slides change instead
-            }
-        } else {
-            // On last slide: if swiping up (moving page down), allow or trigger smooth scroll
-            if (diffY < -30 && overviewSection) {
-                overviewSection.scrollIntoView({ behavior: 'smooth' });
-                isTouchingCarousel = false;
             }
         }
     }, { passive: false });
@@ -212,28 +216,30 @@ if (carouselDom && nextDom && prevDom) {
         const absY = Math.abs(diffY);
         const threshold = 35;
 
-        if (isTransitioning) return;
+        if (isTransitioning || wheelCooldown) return;
 
         // Horizontal Swipe (Left = Next, Right = Prev)
         if (absX > absY && absX > threshold) {
             if (diffX < 0) {
                 if (currentSlideIndex < totalSlides - 1) {
                     triggerSlide('next');
-                } else if (overviewSection) {
-                    overviewSection.scrollIntoView({ behavior: 'smooth' });
+                } else if (teaserSection) {
+                    teaserSection.scrollIntoView({ behavior: 'smooth' });
                 }
             } else {
-                triggerSlide('prev');
+                if (currentSlideIndex > 0) {
+                    triggerSlide('prev');
+                }
             }
         }
         // Vertical Swipe (Up = Next, Down = Prev)
         else if (absY >= absX && absY > threshold) {
             if (diffY < 0) {
-                // Swiping UP -> Next slide
+                // Swiping UP -> Next slide or to Teaser on last slide
                 if (currentSlideIndex < totalSlides - 1) {
                     triggerSlide('next');
-                } else if (overviewSection) {
-                    overviewSection.scrollIntoView({ behavior: 'smooth' });
+                } else if (teaserSection) {
+                    teaserSection.scrollIntoView({ behavior: 'smooth' });
                 }
             } else if (diffY > 0) {
                 // Swiping DOWN -> Prev slide
