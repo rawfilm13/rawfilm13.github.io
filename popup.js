@@ -51,10 +51,10 @@
                 position: relative;
                 width: 100%;
                 max-width: 840px;
-                background: #141414;
+                background: linear-gradient(145deg, #1f0709 0%, #110305 60%, #190508 100%);
                 border-radius: 18px;
-                border: 1px solid rgba(255, 204, 0, 0.35);
-                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 204, 0, 0.18);
+                border: 1.5px solid rgba(229, 9, 20, 0.55);
+                box-shadow: 0 25px 65px rgba(0, 0, 0, 0.92), 0 0 45px rgba(229, 9, 20, 0.3);
                 display: grid;
                 grid-template-columns: 360px 1fr;
                 overflow: hidden;
@@ -109,9 +109,9 @@
                 height: 100%;
                 background: linear-gradient(
                     180deg,
-                    rgba(0, 0, 0, 0.65) 0%,
-                    rgba(0, 0, 0, 0.25) 40%,
-                    rgba(0, 0, 0, 0.92) 100%
+                    rgba(25, 4, 7, 0.7) 0%,
+                    rgba(20, 3, 5, 0.25) 40%,
+                    rgba(25, 4, 7, 0.95) 100%
                 );
                 z-index: 2;
             }
@@ -129,9 +129,9 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                background: rgba(0, 0, 0, 0.7);
-                border: 1px solid rgba(255, 204, 0, 0.5);
-                color: #ffcc00;
+                background: rgba(35, 5, 8, 0.85);
+                border: 1px solid rgba(255, 45, 68, 0.65);
+                color: #ff334b;
                 font-size: 11px;
                 font-weight: 700;
                 letter-spacing: 1.5px;
@@ -156,7 +156,8 @@
             }
 
             .rf-visual-discount span {
-                color: #ffcc00;
+                color: #ff2a40;
+                text-shadow: 0 0 16px rgba(255, 42, 64, 0.6);
             }
 
             .rf-visual-subtitle {
@@ -191,7 +192,7 @@
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                background: #141414;
+                background: linear-gradient(135deg, #180608 0%, #0f0304 100%);
             }
 
             /* Close Button */
@@ -202,7 +203,7 @@
                 width: 36px;
                 height: 36px;
                 background: rgba(255, 255, 255, 0.06);
-                border: 1px solid rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 45, 68, 0.25);
                 border-radius: 50%;
                 color: #bbb;
                 font-size: 22px;
@@ -217,9 +218,9 @@
             }
 
             .rf-popup-close:hover {
-                background: #ffcc00;
-                color: #000;
-                border-color: #ffcc00;
+                background: #ff2a40;
+                color: #fff;
+                border-color: #ff2a40;
                 transform: rotate(90deg);
             }
 
@@ -228,7 +229,7 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                color: #ffcc00;
+                color: #ff334b;
                 font-size: 11px;
                 font-weight: 700;
                 letter-spacing: 1px;
@@ -247,7 +248,8 @@
             }
 
             .rf-popup-title .highlight {
-                color: #ffcc00;
+                color: #ff2a40;
+                text-shadow: 0 0 14px rgba(255, 42, 64, 0.45);
                 position: relative;
                 display: inline-block;
             }
@@ -265,13 +267,13 @@
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                background: rgba(255, 204, 0, 0.08);
-                border-left: 3px solid #ffcc00;
-                padding: 7px 12px;
+                background: rgba(229, 9, 20, 0.15);
+                border-left: 3px solid #ff2a40;
+                padding: 8px 14px;
                 border-radius: 4px;
                 margin-bottom: 18px;
                 font-size: 12px;
-                color: #ffd633;
+                color: #ff9aa6;
                 font-weight: 500;
             }
 
@@ -301,7 +303,7 @@
             }
 
             .rf-form-field label span {
-                color: #ffcc00;
+                color: #ff334b;
             }
 
             .rf-input-wrap {
@@ -314,8 +316,8 @@
                 left: 14px;
                 top: 50%;
                 transform: translateY(-50%);
-                color: #777;
-                font-size: 14px;
+                color: #888;
+                font-size: 15px;
                 pointer-events: none;
                 transition: color 0.25s ease;
             }
@@ -323,63 +325,65 @@
             .rf-form-field input {
                 width: 100%;
                 box-sizing: border-box;
-                background: rgba(255, 255, 255, 0.06);
-                border: 1px solid rgba(255, 255, 255, 0.16);
-                border-radius: 9px;
-                padding: 11px 14px 11px 38px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 45, 68, 0.25);
+                border-radius: 10px;
+                padding: 12px 14px 12px 42px;
                 color: #ffffff;
                 font-family: inherit;
-                font-size: 13.5px;
+                font-size: 14px;
                 transition: all 0.25s ease;
                 outline: none;
             }
 
             .rf-form-field input::placeholder {
-                color: #777;
-                font-size: 13px;
+                color: #888;
+                font-size: 13.5px;
             }
 
             .rf-form-field input:focus {
-                border-color: #ffcc00;
-                background: rgba(255, 255, 255, 0.09);
-                box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+                border-color: #ff2a40;
+                background: rgba(255, 45, 68, 0.08);
+                box-shadow: 0 0 12px rgba(255, 42, 64, 0.35);
             }
 
             .rf-form-field input:focus + i,
             .rf-input-wrap:focus-within i {
-                color: #ffcc00;
+                color: #ff334b;
             }
 
-            /* Submit Button (Send to Whatsapp) */
+            /* Submit Button (Bigger & Red Theme) */
             .rf-popup-submit {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                gap: 10px;
-                background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+                gap: 12px;
+                background: linear-gradient(135deg, #e50914 0%, #b30010 100%);
                 color: #ffffff;
                 border: none;
-                border-radius: 30px;
-                padding: 13px 24px;
-                font-size: 14px;
+                border-radius: 35px;
+                padding: 16px 30px;
+                min-height: 54px;
+                font-size: 16px;
                 font-weight: 700;
-                letter-spacing: 0.5px;
+                letter-spacing: 0.6px;
                 cursor: pointer;
                 font-family: inherit;
-                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+                box-shadow: 0 8px 25px rgba(229, 9, 20, 0.45);
                 transition: all 0.25s ease;
-                margin-top: 4px;
+                margin-top: 6px;
                 width: 100%;
+                box-sizing: border-box;
             }
 
             .rf-popup-submit i {
-                font-size: 18px;
+                font-size: 22px;
             }
 
             .rf-popup-submit:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-                background: linear-gradient(135deg, #2ae771 0%, #16a085 100%);
+                box-shadow: 0 12px 30px rgba(229, 9, 20, 0.65);
+                background: linear-gradient(135deg, #ff1a2b 0%, #cc0013 100%);
             }
 
             .rf-popup-submit:active {
@@ -418,14 +422,14 @@
                 height: 60px;
                 line-height: 60px;
                 border-radius: 50%;
-                background: rgba(37, 211, 102, 0.15);
-                color: #25d366;
+                background: rgba(229, 9, 20, 0.15);
+                color: #ff2a40;
                 font-size: 30px;
                 margin: 0 auto 16px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid #25d366;
+                border: 2px solid #ff2a40;
             }
 
             .rf-popup-success h4 {
@@ -441,40 +445,40 @@
                 margin: 0 0 16px 0;
             }
 
-            /* Floating Reopen Button */
+            /* Floating Reopen Button (Bigger & Red Theme) */
             .rf-offer-reopen-btn {
                 position: fixed;
                 bottom: 25px;
                 left: 25px;
-                background: #111;
-                color: #ffcc00;
-                border: 1.5px solid #ffcc00;
-                padding: 10px 18px;
+                background: #180508;
+                color: #ff334b;
+                border: 1.5px solid #ff2a40;
+                padding: 12px 22px;
                 border-radius: 30px;
-                font-size: 13px;
+                font-size: 14px;
                 font-weight: 700;
                 cursor: pointer;
                 z-index: 99990;
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 204, 0, 0.25);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(229, 9, 20, 0.35);
                 font-family: 'Poppins', sans-serif;
                 transition: all 0.3s ease;
-                animation: rfPulseGold 2.5s infinite;
+                animation: rfPulseRed 2.5s infinite;
             }
 
             .rf-offer-reopen-btn:hover {
-                background: #ffcc00;
-                color: #000;
+                background: #ff2a40;
+                color: #fff;
                 transform: translateY(-3px) scale(1.03);
-                box-shadow: 0 10px 25px rgba(255, 204, 0, 0.45);
+                box-shadow: 0 10px 25px rgba(229, 9, 20, 0.55);
             }
 
-            @keyframes rfPulseGold {
-                0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.5); }
-                70% { box-shadow: 0 0 0 12px rgba(255, 204, 0, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+            @keyframes rfPulseRed {
+                0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.55); }
+                70% { box-shadow: 0 0 0 12px rgba(229, 9, 20, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
             }
 
             @keyframes rfFadeIn {
@@ -522,11 +526,16 @@
                     margin-bottom: 12px;
                 }
 
+                .rf-popup-submit {
+                    padding: 15px 22px;
+                    font-size: 15px;
+                }
+
                 .rf-offer-reopen-btn {
                     bottom: 20px;
                     left: 20px;
-                    padding: 8px 14px;
-                    font-size: 12px;
+                    padding: 10px 16px;
+                    font-size: 13px;
                 }
             }
         `;
