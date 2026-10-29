@@ -124,7 +124,7 @@
         // Load Center Offer Popup if not already present
         if (!document.querySelector('script[src*="popup.js"]')) {
             const popupScript = document.createElement('script');
-            popupScript.src = (window.location.protocol === 'file:' ? 'popup.js' : '/popup.js');
+            popupScript.src = (window.location.protocol === 'file:' ? 'popup.js?v=3.0' : '/popup.js?v=3.0');
             document.body.appendChild(popupScript);
         }
 

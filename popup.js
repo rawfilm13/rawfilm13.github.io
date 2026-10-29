@@ -45,6 +45,7 @@
                 visibility: visible;
                 pointer-events: auto;
             }
+f
 
             /* Center Popup Modal Card */
             .rf-popup-modal {
@@ -147,17 +148,18 @@
             }
 
             .rf-visual-discount {
-                font-size: 42px;
-                font-weight: 800;
-                line-height: 1;
+                font-size: 68px;
+                font-weight: 900;
+                line-height: 0.92;
                 color: #ffffff;
-                text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
-                letter-spacing: -0.5px;
+                text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(255, 42, 64, 0.35);
+                letter-spacing: -2px;
+                margin-bottom: 8px;
             }
 
             .rf-visual-discount span {
                 color: #ff2a40;
-                text-shadow: 0 0 16px rgba(255, 42, 64, 0.6);
+                text-shadow: 0 0 25px rgba(255, 42, 64, 0.7);
             }
 
             .rf-visual-subtitle {
@@ -501,7 +503,9 @@
                 }
 
                 .rf-visual-discount {
-                    font-size: 30px;
+                    font-size: 42px;
+                    line-height: 1;
+                    letter-spacing: -1px;
                 }
 
                 .rf-visual-subtitle {
@@ -747,7 +751,7 @@
                 if (submitText) submitText.innerText = 'Connecting to WhatsApp...';
 
                 // Format WhatsApp Message
-                const waMessage = 
+                const waMessage =
                     `*🎉 20% OFF WEDDING SHOOT CLAIM*\n\n` +
                     `Hello RAW FILM Photography,\n` +
                     `I want to claim the *20% Discount Offer* on Wedding / Pre-Wedding Shoot!\n\n` +
@@ -776,8 +780,8 @@
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                         body: JSON.stringify(sheetData)
-                    }).catch(function () {});
-                } catch (ignoreErr) {}
+                    }).catch(function () { });
+                } catch (ignoreErr) { }
 
                 // Set manual backup link
                 if (manualWaBtn) {
