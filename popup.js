@@ -799,16 +799,8 @@
             });
         }
 
-        // Auto display timer logic:
-        // 1. Landing/Home page: 3-4 seconds (3500ms)
-        // 2. Any other page of website: 7-8 seconds (7500ms)
-        const currentPath = (window.location.pathname || '').toLowerCase();
-        const isLandingPage = currentPath === '' || 
-                              currentPath === '/' || 
-                              currentPath.endsWith('/index.html') || 
-                              currentPath.endsWith('index.html');
-
-        const popupDelayMs = isLandingPage ? 3500 : 7500;
+        // Auto display timer logic: 5 seconds on all pages
+        const popupDelayMs = 5000;
 
         autoPopupTimer = setTimeout(function () {
             openPopup();
