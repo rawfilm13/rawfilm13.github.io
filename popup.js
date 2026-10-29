@@ -46,18 +46,17 @@
                 pointer-events: auto;
             }
 
-            /* Center Popup Modal Card (PC: 2-Columns Side by Side) */
+            /* Center Popup Modal Card */
             .rf-popup-modal {
                 position: relative;
                 width: 100%;
-                max-width: 860px;
-                background: linear-gradient(145deg, #1f0709 0%, #110305 60%, #190508 100%);
+                max-width: 840px;
+                background: #141414;
                 border-radius: 18px;
-                border: 1.5px solid rgba(229, 9, 20, 0.55);
-                box-shadow: 0 25px 65px rgba(0, 0, 0, 0.92), 0 0 45px rgba(229, 9, 20, 0.3);
-                display: grid !important;
-                grid-template-columns: 370px 1fr !important;
-                align-items: stretch;
+                border: 1px solid rgba(255, 204, 0, 0.35);
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 204, 0, 0.18);
+                display: grid;
+                grid-template-columns: 360px 1fr;
                 overflow: hidden;
                 box-sizing: border-box;
                 transform: scale(0.9) translateY(20px);
@@ -91,7 +90,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: center;
+                object-position: center 15%;
                 z-index: 1;
                 transform: scale(1.02);
                 transition: transform 6s ease;
@@ -110,9 +109,9 @@
                 height: 100%;
                 background: linear-gradient(
                     180deg,
-                    rgba(25, 4, 7, 0.7) 0%,
-                    rgba(20, 3, 5, 0.25) 40%,
-                    rgba(25, 4, 7, 0.95) 100%
+                    rgba(0, 0, 0, 0.45) 0%,
+                    rgba(0, 0, 0, 0.15) 35%,
+                    rgba(0, 0, 0, 0.92) 100%
                 );
                 z-index: 2;
             }
@@ -124,17 +123,15 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                align-items: center;
-                text-align: center;
             }
 
             .rf-visual-badge {
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                background: rgba(35, 5, 8, 0.85);
-                border: 1px solid rgba(255, 45, 68, 0.65);
-                color: #ff334b;
+                background: rgba(0, 0, 0, 0.7);
+                border: 1px solid rgba(255, 204, 0, 0.5);
+                color: #ffcc00;
                 font-size: 11px;
                 font-weight: 700;
                 letter-spacing: 1.5px;
@@ -142,60 +139,60 @@
                 padding: 6px 14px;
                 border-radius: 20px;
                 backdrop-filter: blur(8px);
-                align-self: flex-start;
+                width: fit-content;
             }
 
-            /* Center Box with Bada 20% OFF in middle of photo */
-            .rf-visual-center {
-                margin: auto 0;
-                width: 100%;
-                text-align: center;
-                padding: 18px 12px;
-                background: rgba(18, 4, 6, 0.7);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                border: 1.5px solid rgba(255, 42, 64, 0.4);
-                border-radius: 16px;
-                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
-                box-sizing: border-box;
+            .rf-visual-footer {
+                margin-top: auto;
             }
 
+            /* Doubled 20% OFF size with zoom pulse animation (expands 3-4px) */
             .rf-visual-discount {
-                font-size: 64px;
+                font-size: 80px;
                 font-weight: 900;
                 line-height: 0.95;
                 color: #ffffff;
-                text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(255, 42, 64, 0.35);
-                letter-spacing: -1.5px;
-                margin-bottom: 6px;
+                text-shadow: 0 4px 22px rgba(0, 0, 0, 0.98), 0 0 30px rgba(255, 204, 0, 0.55);
+                letter-spacing: -2px;
+                display: inline-block;
+                transform-origin: left bottom;
+                animation: rfDiscountZoom 2.2s ease-in-out infinite alternate;
             }
 
             .rf-visual-discount span {
-                color: #ff2a40;
-                text-shadow: 0 0 25px rgba(255, 42, 64, 0.7);
+                color: #ffcc00;
+                display: inline-block;
+            }
+
+            @keyframes rfDiscountZoom {
+                0% {
+                    transform: scale(1);
+                    filter: drop-shadow(0 0 0px rgba(255, 204, 0, 0));
+                }
+                100% {
+                    transform: scale(1.08) translateY(-2px); /* Zooms out 3-4px */
+                    filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.8));
+                }
             }
 
             .rf-visual-subtitle {
                 font-size: 13.5px;
-                color: #f0f0f0;
+                color: #e0e0e0;
                 margin-top: 6px;
-                font-weight: 600;
+                font-weight: 500;
                 line-height: 1.4;
                 text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             }
 
             .rf-visual-tag {
-                margin-top: auto;
-                padding-top: 10px;
+                margin-top: 14px;
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 gap: 8px;
                 font-size: 11px;
-                color: #ccc;
+                color: #aaa;
                 letter-spacing: 1px;
                 text-transform: uppercase;
-                width: 100%;
             }
 
             .rf-visual-tag img {
@@ -210,7 +207,7 @@
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                background: linear-gradient(135deg, #180608 0%, #0f0304 100%);
+                background: #141414;
             }
 
             /* Close Button */
@@ -221,7 +218,7 @@
                 width: 36px;
                 height: 36px;
                 background: rgba(255, 255, 255, 0.06);
-                border: 1px solid rgba(255, 45, 68, 0.25);
+                border: 1px solid rgba(255, 255, 255, 0.12);
                 border-radius: 50%;
                 color: #bbb;
                 font-size: 22px;
@@ -236,9 +233,9 @@
             }
 
             .rf-popup-close:hover {
-                background: #ff2a40;
-                color: #fff;
-                border-color: #ff2a40;
+                background: #ffcc00;
+                color: #000;
+                border-color: #ffcc00;
                 transform: rotate(90deg);
             }
 
@@ -247,7 +244,7 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
-                color: #ff334b;
+                color: #ffcc00;
                 font-size: 11px;
                 font-weight: 700;
                 letter-spacing: 1px;
@@ -266,8 +263,7 @@
             }
 
             .rf-popup-title .highlight {
-                color: #ff2a40;
-                text-shadow: 0 0 14px rgba(255, 42, 64, 0.45);
+                color: #ffcc00;
                 position: relative;
                 display: inline-block;
             }
@@ -285,13 +281,13 @@
                 display: flex;
                 align-items: center;
                 gap: 8px;
-                background: rgba(229, 9, 20, 0.15);
-                border-left: 3px solid #ff2a40;
-                padding: 8px 14px;
+                background: rgba(255, 204, 0, 0.08);
+                border-left: 3px solid #ffcc00;
+                padding: 7px 12px;
                 border-radius: 4px;
                 margin-bottom: 18px;
                 font-size: 12px;
-                color: #ff9aa6;
+                color: #ffd633;
                 font-weight: 500;
             }
 
@@ -321,7 +317,7 @@
             }
 
             .rf-form-field label span {
-                color: #ff334b;
+                color: #ffcc00;
             }
 
             .rf-input-wrap {
@@ -334,8 +330,8 @@
                 left: 14px;
                 top: 50%;
                 transform: translateY(-50%);
-                color: #888;
-                font-size: 15px;
+                color: #777;
+                font-size: 14px;
                 pointer-events: none;
                 transition: color 0.25s ease;
             }
@@ -343,65 +339,63 @@
             .rf-form-field input {
                 width: 100%;
                 box-sizing: border-box;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 45, 68, 0.25);
-                border-radius: 10px;
-                padding: 12px 14px 12px 42px;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                border-radius: 9px;
+                padding: 11px 14px 11px 38px;
                 color: #ffffff;
                 font-family: inherit;
-                font-size: 14px;
+                font-size: 13.5px;
                 transition: all 0.25s ease;
                 outline: none;
             }
 
             .rf-form-field input::placeholder {
-                color: #888;
-                font-size: 13.5px;
+                color: #777;
+                font-size: 13px;
             }
 
             .rf-form-field input:focus {
-                border-color: #ff2a40;
-                background: rgba(255, 45, 68, 0.08);
-                box-shadow: 0 0 12px rgba(255, 42, 64, 0.35);
+                border-color: #ffcc00;
+                background: rgba(255, 255, 255, 0.09);
+                box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
             }
 
             .rf-form-field input:focus + i,
             .rf-input-wrap:focus-within i {
-                color: #ff334b;
+                color: #ffcc00;
             }
 
-            /* Submit Button (Bigger & Red Theme) */
+            /* Submit Button (Send to Whatsapp) */
             .rf-popup-submit {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                gap: 12px;
-                background: linear-gradient(135deg, #e50914 0%, #b30010 100%);
+                gap: 10px;
+                background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
                 color: #ffffff;
                 border: none;
-                border-radius: 35px;
-                padding: 16px 30px;
-                min-height: 54px;
-                font-size: 16px;
+                border-radius: 30px;
+                padding: 13px 24px;
+                font-size: 14px;
                 font-weight: 700;
-                letter-spacing: 0.6px;
+                letter-spacing: 0.5px;
                 cursor: pointer;
                 font-family: inherit;
-                box-shadow: 0 8px 25px rgba(229, 9, 20, 0.45);
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
                 transition: all 0.25s ease;
-                margin-top: 6px;
+                margin-top: 4px;
                 width: 100%;
-                box-sizing: border-box;
             }
 
             .rf-popup-submit i {
-                font-size: 22px;
+                font-size: 18px;
             }
 
             .rf-popup-submit:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 12px 30px rgba(229, 9, 20, 0.65);
-                background: linear-gradient(135deg, #ff1a2b 0%, #cc0013 100%);
+                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+                background: linear-gradient(135deg, #2ae771 0%, #16a085 100%);
             }
 
             .rf-popup-submit:active {
@@ -440,14 +434,14 @@
                 height: 60px;
                 line-height: 60px;
                 border-radius: 50%;
-                background: rgba(229, 9, 20, 0.15);
-                color: #ff2a40;
+                background: rgba(37, 211, 102, 0.15);
+                color: #25d366;
                 font-size: 30px;
                 margin: 0 auto 16px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid #ff2a40;
+                border: 2px solid #25d366;
             }
 
             .rf-popup-success h4 {
@@ -463,40 +457,41 @@
                 margin: 0 0 16px 0;
             }
 
-            /* Floating Reopen Button (Bigger & Red Theme) */
+            /* Floating Reopen Button - Highly highlighted & larger */
             .rf-offer-reopen-btn {
                 position: fixed;
-                bottom: 25px;
-                left: 25px;
-                background: #180508;
-                color: #ff334b;
-                border: 1.5px solid #ff2a40;
-                padding: 12px 22px;
-                border-radius: 30px;
-                font-size: 14px;
-                font-weight: 700;
+                bottom: 28px;
+                left: 28px;
+                background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+                color: #000000;
+                border: 2px solid #ffffff;
+                padding: 14px 26px;
+                border-radius: 40px;
+                font-size: 15px;
+                font-weight: 800;
+                letter-spacing: 0.5px;
                 cursor: pointer;
                 z-index: 99990;
                 display: inline-flex;
                 align-items: center;
-                gap: 8px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(229, 9, 20, 0.35);
+                gap: 10px;
+                box-shadow: 0 10px 30px rgba(255, 170, 0, 0.55), 0 0 25px rgba(255, 204, 0, 0.7);
                 font-family: 'Poppins', sans-serif;
-                transition: all 0.3s ease;
-                animation: rfPulseRed 2.5s infinite;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                animation: rfPulseHighlight 2s infinite;
             }
 
             .rf-offer-reopen-btn:hover {
-                background: #ff2a40;
-                color: #fff;
-                transform: translateY(-3px) scale(1.03);
-                box-shadow: 0 10px 25px rgba(229, 9, 20, 0.55);
+                background: linear-gradient(135deg, #ffe066 0%, #ffaa00 100%);
+                color: #000000;
+                transform: translateY(-4px) scale(1.06);
+                box-shadow: 0 14px 38px rgba(255, 170, 0, 0.8), 0 0 45px rgba(255, 204, 0, 0.95);
             }
 
-            @keyframes rfPulseRed {
-                0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.55); }
-                70% { box-shadow: 0 0 0 12px rgba(229, 9, 20, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+            @keyframes rfPulseHighlight {
+                0% { box-shadow: 0 10px 25px rgba(255, 170, 0, 0.5), 0 0 0 0 rgba(255, 204, 0, 0.85); }
+                70% { box-shadow: 0 10px 30px rgba(255, 170, 0, 0.65), 0 0 0 16px rgba(255, 204, 0, 0); }
+                100% { box-shadow: 0 10px 25px rgba(255, 170, 0, 0.5), 0 0 0 0 rgba(255, 204, 0, 0); }
             }
 
             @keyframes rfFadeIn {
@@ -507,26 +502,20 @@
             /* Responsive Adjustments */
             @media (max-width: 768px) {
                 .rf-popup-modal {
-                    grid-template-columns: 1fr !important;
+                    grid-template-columns: 1fr;
                     max-height: 92vh;
                     overflow-y: auto;
                     border-radius: 14px;
                 }
 
                 .rf-popup-visual {
-                    min-height: 180px;
-                    padding: 14px 18px;
-                }
-
-                .rf-visual-center {
-                    padding: 8px 12px;
-                    margin: 6px 0;
+                    min-height: 190px;
+                    padding: 18px 20px;
                 }
 
                 .rf-visual-discount {
-                    font-size: 42px;
+                    font-size: 52px;
                     line-height: 1;
-                    letter-spacing: -1px;
                 }
 
                 .rf-visual-subtitle {
@@ -551,16 +540,13 @@
                     margin-bottom: 12px;
                 }
 
-                .rf-popup-submit {
-                    padding: 15px 22px;
-                    font-size: 15px;
-                }
-
                 .rf-offer-reopen-btn {
                     bottom: 20px;
-                    left: 20px;
-                    padding: 10px 16px;
-                    font-size: 13px;
+                    left: 16px;
+                    padding: 12px 20px;
+                    font-size: 13.5px;
+                    font-weight: 800;
+                    border: 2px solid #ffffff;
                 }
             }
         `;
@@ -571,7 +557,7 @@
     const imagePath = (function () {
         // Test if in a subdirectory or root
         const isRoot = window.location.pathname === '/' || !window.location.pathname.substring(1).includes('/');
-        return isRoot ? 'image/wedding/DSC05437.webp' : '/image/wedding/DSC05437.webp';
+        return isRoot ? 'image/wedding/popup-offer.webp' : '/image/wedding/popup-offer.webp';
     })();
 
     // HTML Structure
@@ -583,7 +569,7 @@
             <!-- Left: Dark Wedding Image Showcase -->
             <div class="rf-popup-visual">
                 <img src="${imagePath}" 
-                     onerror="if(this.src.indexOf('/image/')!==-1){this.src='image/wedding/DSC05437.webp';}else{this.src='/image/wedding/DSC05437.webp';}" 
+                     onerror="if(this.src.indexOf('/image/')!==-1){this.src='image/wedding/popup-offer.webp';}else{this.src='/image/wedding/popup-offer.webp';}" 
                      alt="RAW FILM Wedding Shoot" 
                      class="rf-popup-bg-img">
                 <div class="rf-popup-visual-overlay"></div>
@@ -593,14 +579,12 @@
                         <i class="fa fa-sparkles"></i> Limited Deal
                     </div>
                     
-                    <!-- Center: 20% OFF Bada-Bada in Middle of Photo -->
-                    <div class="rf-visual-center">
+                    <div class="rf-visual-footer">
                         <div class="rf-visual-discount"><span>20%</span> OFF</div>
-                        <div class="rf-visual-subtitle">Luxury Wedding &amp; Pre-Wedding Shoots</div>
-                    </div>
-
-                    <div class="rf-visual-tag">
-                        <i class="fa fa-camera"></i> RAW FILM Photography
+                        <div class="rf-visual-subtitle">Luxury Wedding &amp; Pre-Wedding Cinematic Shoots</div>
+                        <div class="rf-visual-tag">
+                            <i class="fa fa-camera"></i> RAW FILM Photography
+                        </div>
                     </div>
                 </div>
             </div>
@@ -774,7 +758,7 @@
                 if (submitText) submitText.innerText = 'Connecting to WhatsApp...';
 
                 // Format WhatsApp Message
-                const waMessage =
+                const waMessage = 
                     `*🎉 20% OFF WEDDING SHOOT CLAIM*\n\n` +
                     `Hello RAW FILM Photography,\n` +
                     `I want to claim the *20% Discount Offer* on Wedding / Pre-Wedding Shoot!\n\n` +
@@ -803,8 +787,8 @@
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                         body: JSON.stringify(sheetData)
-                    }).catch(function () { });
-                } catch (ignoreErr) { }
+                    }).catch(function () {});
+                } catch (ignoreErr) {}
 
                 // Set manual backup link
                 if (manualWaBtn) {
