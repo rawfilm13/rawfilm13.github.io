@@ -121,6 +121,13 @@
     function renderFooter() {
         if (document.querySelector('.site-footer')) return; // Avoid duplicate rendering
 
+        // Load Center Offer Popup if not already present
+        if (!document.querySelector('script[src*="popup.js"]')) {
+            const popupScript = document.createElement('script');
+            popupScript.src = (window.location.protocol === 'file:' ? 'popup.js' : '/popup.js');
+            document.body.appendChild(popupScript);
+        }
+
         const placeholder = document.getElementById('site-footer');
         if (placeholder) {
             placeholder.outerHTML = footerHTML;
