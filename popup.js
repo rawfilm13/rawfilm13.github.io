@@ -45,19 +45,19 @@
                 visibility: visible;
                 pointer-events: auto;
             }
-f
 
-            /* Center Popup Modal Card */
+            /* Center Popup Modal Card (PC: 2-Columns Side by Side) */
             .rf-popup-modal {
                 position: relative;
                 width: 100%;
-                max-width: 840px;
+                max-width: 860px;
                 background: linear-gradient(145deg, #1f0709 0%, #110305 60%, #190508 100%);
                 border-radius: 18px;
                 border: 1.5px solid rgba(229, 9, 20, 0.55);
                 box-shadow: 0 25px 65px rgba(0, 0, 0, 0.92), 0 0 45px rgba(229, 9, 20, 0.3);
-                display: grid;
-                grid-template-columns: 360px 1fr;
+                display: grid !important;
+                grid-template-columns: 370px 1fr !important;
+                align-items: stretch;
                 overflow: hidden;
                 box-sizing: border-box;
                 transform: scale(0.9) translateY(20px);
@@ -124,6 +124,8 @@ f
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                align-items: center;
+                text-align: center;
             }
 
             .rf-visual-badge {
@@ -140,21 +142,32 @@ f
                 padding: 6px 14px;
                 border-radius: 20px;
                 backdrop-filter: blur(8px);
-                width: fit-content;
+                align-self: flex-start;
             }
 
-            .rf-visual-footer {
-                margin-top: auto;
+            /* Center Box with Bada 20% OFF in middle of photo */
+            .rf-visual-center {
+                margin: auto 0;
+                width: 100%;
+                text-align: center;
+                padding: 18px 12px;
+                background: rgba(18, 4, 6, 0.7);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1.5px solid rgba(255, 42, 64, 0.4);
+                border-radius: 16px;
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+                box-sizing: border-box;
             }
 
             .rf-visual-discount {
-                font-size: 68px;
+                font-size: 64px;
                 font-weight: 900;
-                line-height: 0.92;
+                line-height: 0.95;
                 color: #ffffff;
                 text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 15px rgba(255, 42, 64, 0.35);
-                letter-spacing: -2px;
-                margin-bottom: 8px;
+                letter-spacing: -1.5px;
+                margin-bottom: 6px;
             }
 
             .rf-visual-discount span {
@@ -164,22 +177,25 @@ f
 
             .rf-visual-subtitle {
                 font-size: 13.5px;
-                color: #e0e0e0;
+                color: #f0f0f0;
                 margin-top: 6px;
-                font-weight: 500;
+                font-weight: 600;
                 line-height: 1.4;
                 text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             }
 
             .rf-visual-tag {
-                margin-top: 14px;
+                margin-top: auto;
+                padding-top: 10px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 8px;
                 font-size: 11px;
-                color: #aaa;
+                color: #ccc;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+                width: 100%;
             }
 
             .rf-visual-tag img {
@@ -491,15 +507,20 @@ f
             /* Responsive Adjustments */
             @media (max-width: 768px) {
                 .rf-popup-modal {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr !important;
                     max-height: 92vh;
                     overflow-y: auto;
                     border-radius: 14px;
                 }
 
                 .rf-popup-visual {
-                    min-height: 170px;
-                    padding: 16px 20px;
+                    min-height: 180px;
+                    padding: 14px 18px;
+                }
+
+                .rf-visual-center {
+                    padding: 8px 12px;
+                    margin: 6px 0;
                 }
 
                 .rf-visual-discount {
@@ -572,12 +593,14 @@ f
                         <i class="fa fa-sparkles"></i> Limited Deal
                     </div>
                     
-                    <div class="rf-visual-footer">
+                    <!-- Center: 20% OFF Bada-Bada in Middle of Photo -->
+                    <div class="rf-visual-center">
                         <div class="rf-visual-discount"><span>20%</span> OFF</div>
-                        <div class="rf-visual-subtitle">Luxury Wedding &amp; Pre-Wedding Cinematic Shoots</div>
-                        <div class="rf-visual-tag">
-                            <i class="fa fa-camera"></i> RAW FILM Photography
-                        </div>
+                        <div class="rf-visual-subtitle">Luxury Wedding &amp; Pre-Wedding Shoots</div>
+                    </div>
+
+                    <div class="rf-visual-tag">
+                        <i class="fa fa-camera"></i> RAW FILM Photography
                     </div>
                 </div>
             </div>
